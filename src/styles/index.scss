@@ -1,0 +1,24 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+// img {
+//   user-select: none;
+//   pointer-events: none;
+// }
+
+body {
+  background-color: var(--h5-c-bg);
+  color: var(--h5-c-text);
+}
+
+.icon-btn {
+  @apply inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-blue-600;
+}
+
+.dark {
+  .icon-btn {
+    @apply hover:text-blue-400;
+  }
+}

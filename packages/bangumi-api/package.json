@@ -1,0 +1,58 @@
+{
+  "name": "bangumi-api",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.27.0",
+  "description": "",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunYouJun/bangumi-api.git"
+  },
+  "bugs": "https://github.com/YunYouJun/bangumi-api/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp && npm publish",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "bumpp": "^8.2.1",
+    "eslint": "^8.23.1",
+    "rimraf": "^4.1.2",
+    "unbuild": "^1.1.1",
+    "vite": "^4.1.1",
+    "vitest": "^0.28.4"
+  },
+  "dependencies": {
+    "axios": "^1.3.2"
+  }
+}
