@@ -3,6 +3,9 @@
 
   --h5-c-bg: transparent;
   --h5-c-text: #000;
+
+  --h5-c-card-bg: #fff;
+  --h5-c-card-border: black;
 }
 
 html.dark {
@@ -10,4 +13,7 @@ html.dark {
 
   --h5-c-bg: #121212;
   --h5-c-text: #fff;
+
+  --h5-c-card-bg: black;
+  --h5-c-card-border: white;
 }

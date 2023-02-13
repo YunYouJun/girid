@@ -29,7 +29,12 @@ const { t } = useI18n()
 </script>
 
 <template>
+  <h1 text-4xl font="bold">
+    Girid
+  </h1>
+
   <CharacterSearch />
+  <CharacterGrid />
   <div pt-4>
     <div text-4xl>
       <div i-carbon-application-mobile inline-block />
