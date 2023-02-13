@@ -4,7 +4,7 @@ const config = {
   mainColor: '#fb7299',
 
   gtag: {
-    // id: 'G-3GDDXY6XPL',
+    id: 'G-CGHD4M92M0',
   },
 }
 

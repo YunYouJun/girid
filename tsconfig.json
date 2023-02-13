@@ -22,7 +22,7 @@
     ],
     "paths": {
       "~/*": ["src/*"],
-      "bangumi-api": ["packages/bangumi-api/index.ts"]
+      "bangumi-api": ["packages/bangumi-api/src/index.ts"]
     }
   },
   "exclude": ["dist", "node_modules"]

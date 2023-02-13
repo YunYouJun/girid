@@ -1,28 +1,28 @@
 {
   "name": "girid",
+  "type": "module",
   "version": "0.0.2",
+  "private": true,
+  "packageManager": "pnpm@7.9.3",
   "description": "",
-  "main": "index.js",
+  "author": {
+    "name": "YunYouJun",
+    "email": "me@yunyoujun.cn",
+    "url": "https://www.yunyoujun.cn"
+  },
+  "license": "MPL-2.0",
+  "homepage": "https://girid.yunyoujun.cn",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/YunYouJun/girid"
+  },
   "keywords": [
     "character",
     "anime",
     "girl",
     "grid"
   ],
-  "homepage": "https://girid.yunyoujun.cn",
-  "author": {
-    "name": "YunYouJun",
-    "email": "me@yunyoujun.cn",
-    "url": "https://www.yunyoujun.cn"
-  },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/YunYouJun/girid"
-  },
-  "license": "MPL-2.0",
-  "type": "module",
-  "private": true,
-  "packageManager": "pnpm@7.9.3",
+  "main": "index.js",
   "scripts": {
     "build": "vite build",
     "build:bangumi": "pnpm -C packages/bangumi-api build",
