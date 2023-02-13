@@ -6,9 +6,16 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
+  title: Girid - Animation Character Preference Table
   desc: 📱 A H5 Template(Vite + Vue) inspired by Vitesse.
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+
+girid:
+  none: None
+
+author:
+  name: YunYouJun

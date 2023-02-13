@@ -8,6 +8,6 @@ onMounted(async () => {
 
 <template>
   <div>
-    Character
+    <!--  -->
   </div>
 </template>

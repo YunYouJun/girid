@@ -1,82 +1,24 @@
 <script setup lang="ts">
-import { useGtag } from 'vue-gtag-next'
-
-const user = useUserStore()
-const name = ref(user.savedName)
-
-const router = useRouter()
-
-const { event } = useGtag()
-
-const go = () => {
-  if (name.value) {
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-
-    event('click_go', {
-      event_label: name,
-      event_category: 'custom_click',
-    })
-  }
-  else {
-    event('click_go', {
-      event_label: 'null',
-      event_category: 'custom_click',
-    })
-  }
-}
+// import { useGtag } from 'vue-gtag-next'
+// const { event } = useGtag()
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <h1 text-4xl font="bold">
-    Girid
-  </h1>
-
-  <CharacterSearch />
-  <CharacterGrid />
-  <div pt-4>
-    <div text-4xl>
-      <div i-carbon-application-mobile inline-block />
-    </div>
-    <p m-2>
-      <a rel="noreferrer" href="https://github.com/YunYouJun/vitesse-h5" target="_blank">
-        Vitesse H5
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
-
-    <div py-4 />
+  <div>
+    <h1 text-xl py="4" font="bold" flex="~" items="center" justify="center">
+      <div color="red" i-ri-heart-line inline-flex />
+      <div mx-2 inline-flex>
+        {{ t('intro.title') }}
+      </div>
+      <div color="red" i-ri-heart-line inline-flex />
+    </h1>
 
     <Suspense>
-      <div m="auto" max-w="800px">
-        <input
-          id="input"
-          v-model="name"
-          :placeholder="t('intro.whats-your-name')"
-          :aria-label="t('intro.whats-your-name')"
-          type="text"
-          autocomplete="false"
-          p="x4 y2"
-          w="full"
-          text="center"
-          bg="transparent"
-          border="~ rounded gray-200 dark:gray-700"
-          @keydown.enter="go"
-        >
-        <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-        <div>
-          <button
-            btn mt-4
-            :disabled="!name"
-            @click="go"
-          >
-            {{ t('button.go') }}
-          </button>
-        </div>
+      <div m="auto" max-w="720px">
+        <CharacterSearch />
+        <CharacterGrid />
       </div>
 
       <template #fallback>

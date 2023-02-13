@@ -18,7 +18,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
-      'bangumi-api': `${path.resolve(__dirname, 'packages/bangumi-api')}/`,
+      'bangumi-api': `${path.resolve(__dirname, 'packages/bangumi-api')}/src/index.ts`,
     },
   },
 

@@ -1,19 +1,19 @@
 :root {
   --h5-c-primary: #00aba9;
 
-  --h5-c-bg: transparent;
+  --h5-c-bg: rgba(248, 248, 248);
   --h5-c-text: #000;
 
   --h5-c-card-bg: #fff;
-  --h5-c-card-border: black;
+  --h5-c-card-border: rgba(0, 0, 0, var(--un-border-opacity, 1));
 }
 
 html.dark {
   color-scheme: dark;
 
-  --h5-c-bg: #121212;
+  --h5-c-bg: #333;
   --h5-c-text: #fff;
 
   --h5-c-card-bg: black;
-  --h5-c-card-border: white;
+  --h5-c-card-border: rgba(255, 255, 255, var(--un-border-opacity, 1));
 }

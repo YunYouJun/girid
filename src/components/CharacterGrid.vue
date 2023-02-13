@@ -1,14 +1,15 @@
 <script lang="ts" setup>
-const gridNum = 20
+import { gridItems } from '~/utils'
 </script>
 
 <template>
   <div
-    class="character-gird" grid="~ cols-5 gap-1"
-    bg="$h5-c-card-border" p="1"
+    class="character-gird shadow hover:shadow-md transition"
+    grid="~ cols-5 gap-2px sm:gap-4px md:gap-6px"
+    bg="$h5-c-card-border" p="2px sm:4px md:6px"
   >
-    <div v-for="i in gridNum" :key="i">
-      <CharacterCard />
+    <div v-for="item in gridItems" :key="item.title">
+      <CharacterCard :item="item" />
     </div>
   </div>
 </template>
