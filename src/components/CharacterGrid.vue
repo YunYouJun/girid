@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { gridItems } from '~/utils'
+const girid = useGiridStore()
 </script>
 
 <template>
@@ -8,8 +8,8 @@ import { gridItems } from '~/utils'
     grid="~ cols-5 gap-2px sm:gap-4px md:gap-6px"
     bg="$h5-c-card-border" p="2px sm:4px md:6px"
   >
-    <div v-for="item in gridItems" :key="item.title">
-      <CharacterCard :item="item" />
+    <div v-for="(item, i) in girid.userGridItems" :key="item.title">
+      <CharacterCard :key="i" :item="item" />
     </div>
   </div>
 </template>

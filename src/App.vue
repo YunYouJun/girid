@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ModalsContainer } from 'vue-final-modal'
 import config from '~/config'
 
 // https://github.com/vueuse/head
@@ -25,4 +26,5 @@ useHead({
 
 <template>
   <RouterView />
+  <ModalsContainer />
 </template>

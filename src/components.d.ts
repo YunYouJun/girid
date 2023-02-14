@@ -7,12 +7,21 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AnimationGrid: typeof import('./components/AnimationGrid.vue')['default']
+    AnimationListGrid: typeof import('./components/AnimationListGrid.vue')['default']
+    AnimeGrid: typeof import('./components/AnimeGrid.vue')['default']
     CharacterCard: typeof import('./components/CharacterCard.vue')['default']
+    CharacterCardImage: typeof import('./components/CharacterCardImage.vue')['default']
     CharacterGrid: typeof import('./components/CharacterGrid.vue')['default']
+    CharacterList: typeof import('./components/CharacterList.vue')['default']
+    CharacterListGrid: typeof import('./components/CharacterListGrid.vue')['default']
     CharacterSearch: typeof import('./components/CharacterSearch.vue')['default']
+    CharacyerCardImage: typeof import('./components/CharacyerCardImage.vue')['default']
+    ChooseCharacterModal: typeof import('./components/ChooseCharacterModal.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Loading: typeof import('./components/Loading.vue')['default']
+    ModalConfirm: typeof import('./components/ModalConfirm.vue')['default']
     NavMenu: typeof import('./components/NavMenu.vue')['default']
     NicknameInput: typeof import('./components/NicknameInput.vue')['default']
     README: typeof import('./components/README.md')['default']

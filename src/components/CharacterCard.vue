@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import type { GridItem } from '~/utils'
-import { defaultAvatar } from '~/utils'
 
 const props = defineProps<{
   item: GridItem
 }>()
+
+const app = useAppStore()
 
 const { locale, t } = useI18n()
 const title = computed(() => locale.value === 'en' ? props.item.title_en : props.item.title)
@@ -24,16 +25,18 @@ const clickTitle = () => {
     customTitleInput.value?.focus()
   }, 50)
 }
+
+const girid = useGiridStore()
+const clickImage = () => {
+  app.showChooseModal = true
+  girid.curGridItem = props.item
+}
 </script>
 
 <template>
   <div bg="$h5-c-card-bg" flex="~ col" h="full">
-    <div aspect="1">
-      <img
-        :src="defaultAvatar"
-        alt="asd"
-        :class="isDark && 'filter-invert'"
-      >
+    <div aspect="1" object="cover center" overflow="hidden">
+      <CharacterCardImage :item="item" @click="clickImage" />
     </div>
     <div flex="~ col 1" border="t-2 gray opacity-50" p="1" justify="center" items="center">
       <div text="center xs sm:base md:xl" font="bold" @click="clickTitle">
@@ -49,7 +52,7 @@ const clickTitle = () => {
         >
       </div>
       <div text="center xs sm:sm" opacity-75>
-        {{ t('girid.none') }}
+        {{ item.name || t('girid.none') }}
       </div>
     </div>
   </div>

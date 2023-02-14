@@ -17,3 +17,7 @@ html.dark {
   --h5-c-card-bg: black;
   --h5-c-card-border: rgba(255, 255, 255, var(--un-border-opacity, 1));
 }
+
+:root {
+  --anime-card-height: calc((100vh - 8rem) / 4);
+}

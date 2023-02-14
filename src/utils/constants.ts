@@ -7,9 +7,14 @@ export interface GridItem {
    * 示例
    */
   example?: string
+  /**
+   * 头像
+   */
+  avatar?: string
+  name?: string
 }
 
-export const gridItems: GridItem[] = [
+export const defaultGridItems: GridItem[] = [
   {
     title: '最想恋爱',
     title_en: 'Most Date',
@@ -62,14 +67,14 @@ export const gridItems: GridItem[] = [
     title_en: 'Most Erotic',
   },
   {
-    title: '最离谱',
-    title_en: 'Most Strangest',
-    example: '满舰饰真子',
-  },
-  {
     title: '最体贴',
     title_en: 'Most Considerate',
     example: '蕾姆',
+  },
+  {
+    title: '最离谱',
+    title_en: 'Most Strangest',
+    example: '满舰饰真子',
   },
   {
     title: '最讨厌',

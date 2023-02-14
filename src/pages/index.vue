@@ -2,6 +2,7 @@
 // import { useGtag } from 'vue-gtag-next'
 // const { event } = useGtag()
 
+const app = useAppStore()
 const { t } = useI18n()
 </script>
 
@@ -26,6 +27,8 @@ const { t } = useI18n()
       </template>
     </Suspense>
   </div>
+
+  <ChooseCharacterModal v-model="app.showChooseModal" />
 </template>
 
 <route lang="yaml">

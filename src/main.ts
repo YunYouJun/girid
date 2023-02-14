@@ -11,6 +11,9 @@ import './styles/css-vars.scss'
 import './styles/index.scss'
 import 'uno.css'
 
+// modal
+import 'vue-final-modal/style.css'
+
 const routes = setupLayouts(generatedRoutes)
 
 // https://github.com/antfu/vite-ssg

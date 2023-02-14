@@ -22,3 +22,16 @@ body {
     @apply hover:text-blue-400;
   }
 }
+
+.girid-btn {
+  color: var(--h5-c-text);
+  border-color: var(--h5-c-text);
+
+  &:hover {
+    color: var(--h5-c-bg);
+  }
+
+  &:disabled {
+    color: var(--h5-c-text);
+  }
+}

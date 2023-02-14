@@ -7,4 +7,8 @@ export interface BangumiApiOptions {
    * @default 'v0'
    */
   version: string
+  /**
+   * set headers['User-Agent']
+   */
+  userAgent: string
 }
