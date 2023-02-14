@@ -5,15 +5,6 @@ import { defaultAvatar } from '~/utils'
 defineProps<{
   item: GridItem
 }>()
-
-const app = useAppStore()
-
-/**
- * choose character
- */
-const chooseCharacter = () => {
-  console.log('open dialog')
-}
 </script>
 
 <template>
