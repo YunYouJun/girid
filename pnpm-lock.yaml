@@ -13,6 +13,12 @@ importers:
       axios:
         specifier: ^1.3.4
         version: 1.3.4
+      html-to-image:
+        specifier: ^1.11.11
+        version: 1.11.11
+      html2canvas:
+        specifier: ^1.4.1
+        version: 1.4.1
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -62,6 +68,9 @@ importers:
       '@vue/test-utils':
         specifier: ^2.3.2
         version: 2.3.2(vue@3.2.47)
+      '@yunlefun/utils':
+        specifier: ^0.0.5
+        version: 0.0.5(html2canvas@1.4.1)
       '@yunlefun/vueuse':
         specifier: ^0.0.4
         version: 0.0.4(@vueuse/core@9.13.0)(vue@3.2.47)
@@ -2897,6 +2906,14 @@ packages:
     resolution: {integrity: sha512-Z7i1inyaDAKpugRF/AjugXb0sGQR+RZwnSmdI6yXfRA1YqjeqvnV7oFtVAgHi3DoF2l1VRJOqDwPMUhLOHitJw==}
     dev: true
 
+  /@yunlefun/utils@0.0.5(html2canvas@1.4.1):
+    resolution: {integrity: sha512-fhy3bSZo33/7EWlvz295Rm1y+T3rr/S+PX+VAvxVAlDEhpspF8hAYqrM7UD+htDPe9c2IwQoqADBeGe67wKf/Q==}
+    peerDependencies:
+      html2canvas: '*'
+    dependencies:
+      html2canvas: 1.4.1
+    dev: true
+
   /@yunlefun/vueuse@0.0.4(@vueuse/core@9.13.0)(vue@3.2.47):
     resolution: {integrity: sha512-3FXH0lsEzvd7nFSlhFz6JoKPv1OaOAXQuX0+kWc92HYIq5W/7pQ+obUFLIs5zeYK2B0VHC7McHAKLxfO68Snag==}
     peerDependencies:
@@ -3196,6 +3213,10 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
+
+  /base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
 
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -3642,6 +3663,11 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /css-line-break@2.1.0:
+    resolution: {integrity: sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==}
+    dependencies:
+      utrie: 1.0.2
 
   /css-select@4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
@@ -5131,6 +5157,17 @@ packages:
       relateurl: 0.2.7
       uglify-js: 3.17.4
     dev: true
+
+  /html-to-image@1.11.11:
+    resolution: {integrity: sha512-9gux8QhvjRO/erSnDPv28noDZcPZmYE7e1vFsBLKLlRlKDSqNJYebj6Qz1TGd5lsRV+X+xYyjCKjuZdABinWjA==}
+    dev: false
+
+  /html2canvas@1.4.1:
+    resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
+    engines: {node: '>=8.0.0'}
+    dependencies:
+      css-line-break: 2.1.0
+      text-segmentation: 1.0.3
 
   /html5parser@2.0.2:
     resolution: {integrity: sha512-L0y+IdTVxHsovmye8MBtFgBvWZnq1C9WnI/SmJszxoQjmUH1psX2uzDk21O5k5et6udxdGjwxkbmT9eVRoG05w==}
@@ -7590,6 +7627,11 @@ packages:
       source-map-support: 0.5.21
     dev: true
 
+  /text-segmentation@1.0.3:
+    resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
+    dependencies:
+      utrie: 1.0.2
+
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
@@ -8058,6 +8100,11 @@ packages:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
     dev: true
+
+  /utrie@1.0.2:
+    resolution: {integrity: sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==}
+    dependencies:
+      base64-arraybuffer: 1.0.2
 
   /validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}

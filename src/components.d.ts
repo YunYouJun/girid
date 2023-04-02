@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     CharacterSearch: typeof import('./components/CharacterSearch.vue')['default']
     ChooseCharacterModal: typeof import('./components/ChooseCharacterModal.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
+    DownloadGirid: typeof import('./components/DownloadGirid.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Loading: typeof import('./components/Loading.vue')['default']
     NavMenu: typeof import('./components/NavMenu.vue')['default']

@@ -51,7 +51,7 @@ function clickImage() {
           @blur="editable = false"
         >
       </div>
-      <div text="center xs sm:sm" opacity-75>
+      <div class="girid-character-name" text="center xs sm:sm" opacity-75>
         {{ item.name || t('girid.none') }}
       </div>
     </div>
