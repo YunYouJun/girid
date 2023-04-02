@@ -37,8 +37,21 @@ function setCharacterName() {
     class="flex justify-center overflow-auto"
     content-class="overflow-auto  md:mt-8 max-w-xl dark:bg-gray-900 dark:border-gray-700"
   >
-    <div rounded p-2 bg-white shadow>
-      <div v-if="!search.curAnimation" relative mb-2>
+    <div relative rounded p-2 bg-white shadow>
+      <div
+        class="icon" w="10" h="10"
+        flex="~" justify="center" items="center"
+        absolute top-1 right-1 @click="app.showChooseModal = false"
+      >
+        <div i-ri-close-line />
+      </div>
+      <div m="t-2 b-3">
+        <h1 class="text-2xl font-bold" text="center">
+          选择角色
+        </h1>
+      </div>
+
+      <div v-if="!search.curAnimation" relative my-2>
         <div
           v-if="search.keyword" cursor="pointer"
           absolute right-2 inline-flex justify="center" items-center h="full" opacity="70"
@@ -90,9 +103,6 @@ function setCharacterName() {
       </div>
 
       <slot />
-      <button class="girid-btn" my-1 @click="app.showChooseModal = false">
-        关闭
-      </button>
     </div>
   </VueFinalModal>
 </template>

@@ -6,11 +6,15 @@ const { locale } = useI18n()
 </script>
 
 <template>
-  <div v-if="search.animationList.length" grid="~ cols-3 md:cols-4 gap-1">
+  <div
+    v-if="search.animationList.length"
+    grid="~ cols-3 md:cols-4 gap-1" justify="center" items="center"
+  >
     <div
       v-for="item in search.animationList" :key="item.id"
       flex="~ col" items="center" justify="center" cursor="pointer"
-      h="$anime-card-height"
+      m="auto"
+      max-h="$anime-card-height"
       shadow-md
       border
       relative

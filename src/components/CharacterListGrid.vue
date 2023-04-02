@@ -17,11 +17,12 @@ function clickCharacter(item: CharacterInfo) {
 </script>
 
 <template>
-  <div grid="~ cols-3 md:cols-4 gap-1">
+  <div grid="~ cols-3 md:cols-4 gap-1" justify="center" items="center">
     <div
       v-for="item in search.characterList" :key="item.id"
-      flex="~ col" items="center" justify="center" cursor="pointer"
-      h="$anime-card-height"
+      flex="~ col" items="center" justify="center"
+      cursor="pointer"
+      max-h="$anime-card-height"
       shadow-md
       border
       relative
