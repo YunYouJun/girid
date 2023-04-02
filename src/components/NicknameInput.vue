@@ -6,7 +6,7 @@ const name = ref(user.savedName)
 
 const router = useRouter()
 
-const go = () => {
+function go() {
   if (name.value)
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }

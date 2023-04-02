@@ -8,7 +8,7 @@ const girid = useGiridStore()
 const search = useSearchStore()
 const { t } = useI18n()
 
-const go = async () => {
+async function go() {
   try {
     const results = await bangumiApi.search.subject.get(search.keyword, {
       type: SubjectType.ANIME,
@@ -21,7 +21,7 @@ const go = async () => {
   catch {}
 }
 
-const setCharacterName = () => {
+function setCharacterName() {
   if (!search.keyword)
     return
   if (!girid.curGridItem)

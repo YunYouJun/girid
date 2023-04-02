@@ -16,7 +16,7 @@ export const defaultOptions: BangumiApiOptions = {
  * generate bangumi api instance
  * @param options
  */
-export const createBangumiApi = (options: Partial<BangumiApiOptions> = {}) => {
+export function createBangumiApi(options: Partial<BangumiApiOptions> = {}) {
   options = Object.assign(defaultOptions, options)
   bangumiAxios.defaults.baseURL = `${bangumiApiUrl}/${options.version}`
   bangumiAxios.defaults.headers['User-Agent'] = options.userAgent || ''

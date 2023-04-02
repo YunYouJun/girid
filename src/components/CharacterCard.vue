@@ -19,7 +19,7 @@ const customTitleInput = ref<HTMLInputElement>()
 /**
  * click title to focus
  */
-const clickTitle = () => {
+function clickTitle() {
   editable.value = true
   setTimeout(() => {
     customTitleInput.value?.focus()
@@ -27,7 +27,7 @@ const clickTitle = () => {
 }
 
 const girid = useGiridStore()
-const clickImage = () => {
+function clickImage() {
   app.showChooseModal = true
   girid.curGridItem = props.item
 }

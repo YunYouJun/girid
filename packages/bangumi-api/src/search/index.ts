@@ -4,7 +4,7 @@ import type { SearchParams, Subject } from '../types'
 
 axios.defaults.baseURL = bangumiApiUrl
 
-export const createSearch = () => {
+export function createSearch() {
   const subject = {
     /**
      * 条目搜索

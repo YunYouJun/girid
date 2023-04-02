@@ -1,12 +1,12 @@
 import { bangumiAxios } from '../axios'
 import type { CharacterInfo, ImageType, Subject } from '../types'
 
-export const subjects = (params: {
+export function subjects(params: {
   /**
    * subject id
    */
   subject_id: number
-}) => {
+}) {
   const subjectId = params.subject_id
   const prefix = '/subjects'
 

@@ -5,7 +5,7 @@ const app = useAppStore()
 const search = useSearchStore()
 const girid = useGiridStore()
 
-const clickCharacter = (item: CharacterInfo) => {
+function clickCharacter(item: CharacterInfo) {
   if (!girid.curGridItem)
     return
 
