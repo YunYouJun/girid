@@ -24,6 +24,10 @@ body {
 }
 
 .girid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   color: var(--h5-c-text);
   border-color: var(--h5-c-text);
 

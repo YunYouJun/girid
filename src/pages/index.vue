@@ -4,10 +4,21 @@
 
 const app = useAppStore()
 const { t } = useI18n()
+
+const girid = useGiridStore()
 </script>
 
 <template>
   <div>
+    <div flex="~" justify="evenly" items="center">
+      <button inline-flex class="girid-btn" w="20" @click="girid.reset()">
+        重置
+      </button>
+      <button inline-flex class="girid-btn" w="20" @click="girid.reset()">
+        下载
+      </button>
+    </div>
+
     <h1 text-xl py="4" font="bold" flex="~" items="center" justify="center">
       <div color="red" i-ri-heart-line inline-flex />
       <div mx-2 inline-flex>

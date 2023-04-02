@@ -3,13 +3,17 @@ import type { GridItem } from '~/utils'
 import { defaultGridItems } from '~/utils'
 
 export const useGiridStore = defineStore('girid', () => {
-  const userGridItems = ref(defaultGridItems)
+  const userGridItems = useStorage('girid-user-items', defaultGridItems)
   const curGridItem = ref<GridItem>()
 
   return {
     userGridItems,
 
     curGridItem,
+
+    reset() {
+      userGridItems.value = defaultGridItems
+    },
   }
 })
 

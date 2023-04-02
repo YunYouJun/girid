@@ -30,7 +30,7 @@ function clickCharacter(item: CharacterInfo) {
       <div w="full" overflow-hidden object="center" h="full">
         <img
           v-if="item.images.medium"
-          object="cover"
+          object="cover top"
           w="full" h="full" :src="item.images.medium" :alt="item.name"
         >
       </div>

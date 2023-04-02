@@ -10,6 +10,9 @@ const { t } = useI18n()
       </div>
 
       <div mt="1">
+        <a href="https://github.com/YunYouJun/girid" target="_blank" class="underline">
+          YunYouJun/girid
+        </a>
         Inspired by
         <a href="https://github.com/itorr/anime-grid" target="_blank" class="underline">
           itorr/anime-grid

@@ -10,10 +10,11 @@ defineProps<{
 <template>
   <div cursor="pointer" h="full">
     <img
-      class="object-center object-cover h-full w-full"
+      object="top cover"
+      class="h-full w-full"
       :src="item.avatar || defaultAvatar"
       :alt="item.name"
-      :class="isDark && 'filter-invert'"
+      :class="isDark"
     >
   </div>
 </template>

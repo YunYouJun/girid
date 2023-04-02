@@ -24,5 +24,7 @@ declare module '@vue/runtime-core' {
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    UploadImageBtn: typeof import('./components/UploadImageBtn.vue')['default']
+    UploadImageInput: typeof import('./components/UploadImageInput.vue')['default']
   }
 }

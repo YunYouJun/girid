@@ -86,9 +86,7 @@ function setCharacterName() {
           没找到，就用搜索框里的文字了
         </button>
 
-        <button class="girid-btn" my-1>
-          上传图片 TODO
-        </button>
+        <UploadImageBtn />
       </div>
 
       <slot />

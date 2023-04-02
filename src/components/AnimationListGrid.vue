@@ -19,7 +19,7 @@ const { locale } = useI18n()
     >
       <div w="full" overflow-hidden object="center" h="full">
         <img
-          object="cover"
+          object="cover top"
           w="full" h="full"
           :src="item.images?.medium || defaultAvatar" :alt="item.name"
         >
