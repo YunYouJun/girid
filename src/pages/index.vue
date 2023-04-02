@@ -13,6 +13,7 @@ const girid = useGiridStore()
     <button inline-flex class="girid-btn" w="20" @click="girid.reset()">
       重置
     </button>
+    <CopyGirid />
     <DownloadGirid />
   </div>
 
