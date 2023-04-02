@@ -6,8 +6,9 @@ const props = defineProps<{
 }>()
 
 const app = useAppStore()
+const girid = useGiridStore()
 
-const { locale, t } = useI18n()
+const { locale } = useI18n()
 const title = computed(() => locale.value === 'en' ? props.item.title_en : props.item.title)
 
 const editable = ref(false)
@@ -21,12 +22,21 @@ const customTitleInput = ref<HTMLInputElement>()
  */
 function clickTitle() {
   editable.value = true
+
+  girid.curGridItem = props.item
+
   setTimeout(() => {
     customTitleInput.value?.focus()
   }, 50)
 }
 
-const girid = useGiridStore()
+function onBlur() {
+  editable.value = false
+
+  if (girid.curGridItem && customTitle.value)
+    girid.curGridItem.title = customTitle.value
+}
+
 function clickImage() {
   app.showChooseModal = true
   girid.curGridItem = props.item
@@ -48,12 +58,11 @@ function clickImage() {
           h="full"
           w="full" border="1"
           @keyup.enter="editable = false"
-          @blur="editable = false"
+          @blur="onBlur"
         >
       </div>
-      <div class="girid-character-name" text="center xs sm:sm" opacity-75>
-        {{ item.name || t('girid.none') }}
-      </div>
+
+      <CharacterName :item="item" />
     </div>
   </div>
 </template>

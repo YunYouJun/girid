@@ -10,10 +10,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AnimationListGrid: typeof import('./components/AnimationListGrid.vue')['default']
+    CharacaterName: typeof import('./components/CharacaterName.vue')['default']
     CharacterCard: typeof import('./components/CharacterCard.vue')['default']
     CharacterCardImage: typeof import('./components/CharacterCardImage.vue')['default']
     CharacterGrid: typeof import('./components/CharacterGrid.vue')['default']
     CharacterListGrid: typeof import('./components/CharacterListGrid.vue')['default']
+    CharacterName: typeof import('./components/CharacterName.vue')['default']
     CharacterSearch: typeof import('./components/CharacterSearch.vue')['default']
     ChooseCharacterModal: typeof import('./components/ChooseCharacterModal.vue')['default']
     CopyGirid: typeof import('./components/CopyGirid.vue')['default']
