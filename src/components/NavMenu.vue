@@ -26,7 +26,7 @@ function toggleLocales() {
       <div i-ri-information-line />
     </RouterLink>
 
-    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/YunYouJun/vitesse-h5" target="_blank" title="GitHub">
+    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/YunYouJun/girid" target="_blank" title="GitHub">
       <div i-ri-github-line />
     </a>
   </nav>
