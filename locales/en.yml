@@ -5,6 +5,9 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+  reset: Reset
+  copy: Copy
+  download: Download
 intro:
   title: Girid - Animation Character Preference Table
   desc: 📱 A H5 Template(Vite + Vue) inspired by Vitesse.

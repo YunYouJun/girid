@@ -3,6 +3,8 @@ import { toBlob } from 'html-to-image'
 
 import { copyBlobToClipboard } from 'copy-image-clipboard'
 
+const { t } = useI18n()
+
 async function onClick() {
   const container = document.getElementById('girid-container')
   if (!container)
@@ -19,7 +21,7 @@ async function onClick() {
 </script>
 
 <template>
-  <button inline-flex class="girid-btn" w="20" @click="onClick">
-    复制
+  <button inline-flex class="girid-btn" w="21" @click="onClick">
+    {{ t('button.copy') }}
   </button>
 </template>

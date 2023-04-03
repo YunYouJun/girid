@@ -2,6 +2,8 @@
 import { downloadDataUrlAsImage } from '@yunlefun/utils'
 import { toPng } from 'html-to-image'
 
+const { t } = useI18n()
+
 async function onClick() {
   const container = document.getElementById('girid-container')
   if (!container)
@@ -18,7 +20,7 @@ async function onClick() {
 </script>
 
 <template>
-  <button inline-flex class="girid-btn" w="20" @click="onClick">
-    下载
+  <button inline-flex class="girid-btn" w="21" @click="onClick">
+    {{ t('button.download') }}
   </button>
 </template>
