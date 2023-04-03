@@ -10,7 +10,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AnimationListGrid: typeof import('./components/AnimationListGrid.vue')['default']
-    CharacaterName: typeof import('./components/CharacaterName.vue')['default']
     CharacterCard: typeof import('./components/CharacterCard.vue')['default']
     CharacterCardImage: typeof import('./components/CharacterCardImage.vue')['default']
     CharacterGrid: typeof import('./components/CharacterGrid.vue')['default']
@@ -29,6 +28,5 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UploadImageBtn: typeof import('./components/UploadImageBtn.vue')['default']
-    UploadImageInput: typeof import('./components/UploadImageInput.vue')['default']
   }
 }

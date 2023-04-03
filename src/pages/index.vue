@@ -10,8 +10,8 @@ const girid = useGiridStore()
 
 <template>
   <div flex="~" justify="evenly" items="center">
-    <button inline-flex class="girid-btn" w="20" @click="girid.reset()">
-      重置
+    <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
+      {{ t('button.reset') }}
     </button>
     <CopyGirid />
     <DownloadGirid />

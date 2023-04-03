@@ -2,9 +2,15 @@
 
 ❤ 动画角色喜好表生成器 Lovely girls grid. Inspired by anime-grid.
 
+> Girid = Girl + Grid
+
 ## 地址
 
 - [girid.yunyoujun.cn](https://girid.yunyoujun.cn)
+
+## Todo
+
+- Random
 
 ## Thanks
 

@@ -5,6 +5,9 @@ button:
   home: 首页
   toggle_dark: 切换深色模式
   toggle_langs: 切换语言
+  reset: 重置
+  copy: 复制
+  download: 下载
 intro:
   title: Girid - 动画角色印象表
   desc: 📱 固执己见的 Vite H5 项目模板
