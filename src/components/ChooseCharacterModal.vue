@@ -47,7 +47,7 @@ function setCharacterName() {
       </div>
       <div m="t-2 b-3">
         <h1 class="text-2xl font-bold" text="center">
-          选择角色
+          {{ t('modal.title') }}
         </h1>
       </div>
 
@@ -92,11 +92,11 @@ function setCharacterName() {
           :disabled="!search.keyword"
           @click="go"
         >
-          在「番组计划」搜索
+          {{ t('modal.search_from_bangumi') }}
         </button>
 
         <button class="girid-btn" my-1 @click="setCharacterName">
-          没找到，就用搜索框里的文字了
+          {{ t('modal.use_search_input') }}
         </button>
 
         <UploadImageBtn />
