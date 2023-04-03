@@ -35,9 +35,9 @@ function setCharacterName() {
 <template>
   <VueFinalModal
     class="flex justify-center overflow-auto"
-    content-class="overflow-auto  md:mt-8 max-w-xl dark:bg-gray-900 dark:border-gray-700"
+    content-class="overflow-auto  md:mt-8 max-w-xl"
   >
-    <div relative rounded p-2 bg-white shadow>
+    <div relative bg-white dark:bg-gray-900 dark:border-gray-700 rounded p-2 shadow>
       <div
         class="icon" w="10" h="10"
         flex="~" justify="center" items="center"
