@@ -30,9 +30,11 @@ body {
 
   color: var(--h5-c-text);
   border-color: var(--h5-c-text);
+  background-color: var(--h5-c-bg);
 
   &:hover {
     color: var(--h5-c-bg);
+    background-color: var(--h5-c-text);
   }
 
   &:disabled {
