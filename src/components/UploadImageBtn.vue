@@ -3,6 +3,7 @@ const uploadImgInput = ref<HTMLInputElement>()
 
 const app = useAppStore()
 const girid = useGiridStore()
+const { t } = useI18n()
 
 function onClick() {
   uploadImgInput.value?.click()
@@ -36,7 +37,7 @@ function onFileChange(_e: Event) {
 
 <template>
   <button class="girid-btn" my-1 @click="onClick">
-    上传图片
+    {{ t('button.upload_image') }}
     <input
       ref="uploadImgInput" class="upload-image-input"
       type="file" accept="image/*"

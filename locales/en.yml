@@ -8,6 +8,7 @@ button:
   reset: Reset
   copy: Copy
   download: Download
+  upload_image: Upload Image
 intro:
   title: Girid - Animation Character Preference Table
   desc: 📱 A H5 Template(Vite + Vue) inspired by Vitesse.
@@ -16,6 +17,11 @@ intro:
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+
+modal:
+  title: Select Character
+  search_from_bangumi: Search from「Bangumi」
+  use_search_input: Not found? Use input provided instead
 
 girid:
   none: None

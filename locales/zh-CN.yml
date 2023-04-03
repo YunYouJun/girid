@@ -8,6 +8,7 @@ button:
   reset: 重置
   copy: 复制
   download: 下载
+  upload_image: 上传图片
 intro:
   title: Girid - 动画角色印象表
   desc: 📱 固执己见的 Vite H5 项目模板
@@ -16,6 +17,11 @@ intro:
   aka: 也叫
   whats-your-name: 输入你的名字
 not-found: 未找到页面
+
+modal:
+  title: 选择角色
+  search_from_bangumi: 在「番组计划」搜索
+  use_search_input: 没找到，就用搜索框里的文字了
 
 girid:
   none: 无
