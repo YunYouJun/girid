@@ -12,7 +12,7 @@ defineProps<{
     <img
       object="top cover"
       class="h-full w-full"
-      :src="item.avatar || defaultAvatar"
+      :src="`${item.avatar || defaultAvatar}`"
       :alt="item.name"
       :class="isDark"
     >
