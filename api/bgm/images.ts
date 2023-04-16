@@ -1,8 +1,8 @@
-import type { NowRequest, NowResponse } from '@vercel/node'
+import type { VercelRequest, VercelResponse } from '@vercel/node'
 import type { Method } from 'axios'
 import axios from 'axios'
 
-async function handler(request: NowRequest, response: NowResponse) {
+async function handler(request: VercelRequest, response: VercelResponse) {
   if (!request.url)
     return
 
