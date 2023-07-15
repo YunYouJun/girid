@@ -75,7 +75,7 @@ function onFileChange(_e: Event) {
 </script>
 
 <template>
-  <div w="25" bg="$h5-c-card-bg" flex="~ col" h="full">
+  <div bg="$h5-c-card-bg" flex="~ col" h="full">
     <div aspect="1" object="cover center" overflow="hidden">
       <GiridCardImage :item="item" @click="clickImage" />
       <input

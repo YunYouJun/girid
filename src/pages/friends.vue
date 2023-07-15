@@ -55,7 +55,7 @@ const friend = useFriendStore()
         op="60"
         my="1"
       >
-        <span>girid.yunyoujun.cn/friends</span>
+        <span>girid.yunyoujun.cn</span>
       </a>
     </div>
   </div>
