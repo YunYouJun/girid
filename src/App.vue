@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import 'wc-github-corners'
-
 import { ModalsContainer } from 'vue-final-modal'
 import pkg from '../package.json'
 
@@ -23,6 +21,12 @@ useHead({
       rel: 'icon',
       type: 'image/svg+xml',
       href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+    },
+  ],
+  script: [
+    {
+      src: 'https://fastly.jsdelivr.net/npm/wc-github-corners@latest',
+      type: 'module',
     },
   ],
 })
