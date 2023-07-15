@@ -14,6 +14,8 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 
+import { componentsDir } from '@yunlefun/vue-components'
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -30,6 +32,13 @@ export default defineConfig({
 
     Vue({
       include: [/\.vue$/, /\.md$/],
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => {
+            return ['github-corners'].includes(tag)
+          },
+        },
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -59,6 +68,7 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
+      dirs: ['src/components', componentsDir],
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown

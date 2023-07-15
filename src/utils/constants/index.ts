@@ -1,4 +1,4 @@
-export const defaultAvatar = 'https://cdn.yunyoujun.cn/img/avatar/none.jpg'
+export * from './images'
 
 export interface GridItem {
   title: string

@@ -5,33 +5,44 @@
 const app = useAppStore()
 const { t } = useI18n()
 
-const girid = useGiridStore()
+const friend = useFriendStore()
+
+// todo
+// custom column and row
+// custom add & delete card item
 </script>
 
 <template>
   <div mt="10" flex="~" justify="evenly" items="center">
-    <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
+    <button inline-flex class="girid-btn" w="21" @click="friend.reset()">
       {{ t('button.reset') }}
     </button>
     <CopyGirid />
     <DownloadGirid />
   </div>
 
-  <div m="auto" max-w="720px">
+  <div>
+    Working...
+  </div>
+  <div>
+    cols:
+    <input v-model="friend.cols">
+    rows:
+    <input v-model="friend.rows">
+  </div>
+
+  <div m="auto">
     <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
       <h1 text-xl py="4" font="bold" flex="~" items="center" justify="center">
         <div color="red" i-ri-heart-line inline-flex />
         <div mx-2 inline-flex>
-          {{ t('intro.title') }}
+          群友印象表
         </div>
         <div color="red" i-ri-heart-line inline-flex />
       </h1>
 
       <Suspense>
-        <div m="auto" max-w="720px">
-          <CharacterSearch />
-          <CharacterGrid />
-        </div>
+        <FriendGrid />
 
         <template #fallback>
           <Loading />
@@ -44,7 +55,7 @@ const girid = useGiridStore()
         op="60"
         my="1"
       >
-        <span>girid.yunyoujun.cn</span>
+        <span>girid.yunyoujun.cn/friends</span>
       </a>
     </div>
   </div>

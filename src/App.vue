@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import 'wc-github-corners'
+
 import { ModalsContainer } from 'vue-final-modal'
+import pkg from '../package.json'
+
 import config from '~/config'
 
 // https://github.com/vueuse/head
@@ -22,9 +26,15 @@ useHead({
     },
   ],
 })
+
+const url = pkg.repository.url
 </script>
 
 <template>
+  <github-corners
+    :url="url"
+    blank
+  />
   <RouterView />
   <ModalsContainer />
 </template>
