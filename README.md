@@ -1,6 +1,7 @@
-# girid 动画角色喜好表生成器
+# girid 印象表生成器
 
-❤ 动画角色喜好表生成器 Lovely girls grid. Inspired by anime-grid.
+- ❤ 动画角色喜好表生成器 Lovely girls grid. Inspired by anime-grid.
+- 👗 群友印象表
 
 > Girid = Girl + Grid
 
