@@ -64,11 +64,15 @@ function onFileChange(_e: Event) {
     if (!result)
       return
 
-    if (!friend.curGridItem)
-      return
+    if (!friend.curGridItem) {
+      friend.gridItems[friend.curGridIndex] = {
+        title: '色批',
+        title_en: '',
+      }
+    }
 
     friend.curGridItem.avatar = result.toString()
-    // friend.curGridItem.name = file.name
+    friend.curGridItem.name = file.name
   }
   reader.readAsDataURL(file)
 }
@@ -85,8 +89,8 @@ function onFileChange(_e: Event) {
       >
     </div>
     <div flex="~ col 1" border="t-2 gray opacity-50" p="1" justify="center" items="center">
-      <div text="center xs sm:base md:xl" font="bold" @click="clickTitle">
-        <span v-show="!editable" cursor="pointer">{{ customTitle || title }}</span>
+      <div w="full" text="center xs sm:base md:xl" font="bold" @click="clickTitle">
+        <span v-show="!editable" cursor="pointer">{{ customTitle || title || '标签印象' }}</span>
         <input
           v-show="editable"
           ref="customTitleInput" v-model="customTitle"

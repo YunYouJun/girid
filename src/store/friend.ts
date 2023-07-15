@@ -8,7 +8,7 @@ export const useFriendStore = defineStore('friend', () => {
   const num = computed(() => cols.value * rows.value)
   const curGridIndex = ref(0)
 
-  const gridItems = useStorage('girid:friend:items', [])
+  const gridItems = useStorage<GridItem[]>('girid:friend:items', [])
   const curGridItem = computed<GridItem>(() => gridItems.value[curGridIndex.value])
 
   return {
