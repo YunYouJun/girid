@@ -24,7 +24,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "build": "pnpm -C packages/site build",
+    "build": "pnpm run generate",
+    "build:site": "pnpm -C packages/site build",
     "build:bangumi": "pnpm -C packages/bangumi-api build",
     "dev": "pnpm -C packages/site dev",
     "generate": "pnpm -C packages/site generate",
