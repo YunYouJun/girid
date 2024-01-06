@@ -17,20 +17,20 @@ definePageMeta({
 </script>
 
 <template>
-  <div mt="2" flex="~" justify="evenly" items="center">
-    <button inline-flex class="girid-btn" w="21" @click="friend.reset()">
-      {{ t('button.reset') }}
-    </button>
-    <CopyGirid />
-    <DownloadGirid />
-  </div>
-
-  <GridControls
-    v-model:rows="friend.rows"
-    v-model:cols="friend.cols"
-  />
-
   <div m="auto" max-w="800px">
+    <GridControls
+      v-model:rows="friend.rows"
+      v-model:cols="friend.cols"
+    />
+
+    <div mt="4" flex="~" justify="evenly" items="center">
+      <button inline-flex class="girid-btn" w="21" @click="friend.reset()">
+        {{ t('button.reset') }}
+      </button>
+      <CopyGirid />
+      <DownloadGirid />
+    </div>
+
     <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
       <GiridTitle title="群友印象表" />
 

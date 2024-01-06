@@ -24,7 +24,7 @@ function updateCols(e: Event) {
 </script>
 
 <template>
-  <div class="flex items-center justify-center pt-4">
+  <div class="flex items-center justify-center">
     <div class="inline-flex flex-wrap items-center gap-2 p-2">
       <label>
         {{ $t('label.row') }}

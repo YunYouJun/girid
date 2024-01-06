@@ -1,5 +1,5 @@
 <template>
-  <GiridLogo class="m-auto mt-6" />
+  <GiridLogo class="m-auto pt-6" />
 
   <main class="p-4 pb-19 text-center">
     <RouterView />

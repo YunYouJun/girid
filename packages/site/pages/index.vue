@@ -11,20 +11,20 @@ definePageMeta({
 </script>
 
 <template>
-  <div mt="2" flex="~" justify="evenly" items="center">
-    <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
-      {{ $t('button.reset') }}
-    </button>
-    <CopyGirid />
-    <DownloadGirid />
-  </div>
-
-  <GridControls
-    v-model:rows="girid.rows"
-    v-model:cols="girid.cols"
-  />
-
   <div m="auto" max-w="800px">
+    <GridControls
+      v-model:rows="girid.rows"
+      v-model:cols="girid.cols"
+    />
+
+    <div mt="4" flex="~" justify="evenly" items="center">
+      <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
+        {{ $t('button.reset') }}
+      </button>
+      <CopyGirid />
+      <DownloadGirid />
+    </div>
+
     <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
       <GiridTitle :title="$t('intro.title')" />
 
