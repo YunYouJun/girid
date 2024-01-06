@@ -13,6 +13,13 @@
 
 - Random
 
+## Dev
+
+```bash
+npm run generate
+# static content in ./packages/site/dist
+```
+
 ## Thanks
 
 - Data from [api | bangumi](https://bangumi.github.io/api/#/).

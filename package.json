@@ -27,6 +27,7 @@
     "build": "pnpm -C packages/site build",
     "build:bangumi": "pnpm -C packages/bangumi-api build",
     "dev": "pnpm -C packages/site dev",
+    "generate": "pnpm -C packages/site generate",
     "lint": "eslint .",
     "test": "vitest",
     "test:unit": "vitest",
