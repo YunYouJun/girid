@@ -12,7 +12,7 @@ const styles = computed(() => {
 <template>
   <div
     class="friend-grid shadow transition hover:shadow-md"
-    grid="~ gap-2px sm:gap-4px md:gap-6px cols-5 rows-2"
+    grid="~ gap-2px sm:gap-4px md:gap-6px"
     bg="$h5-c-card-border" p="2px sm:4px md:6px"
     :style="styles"
     m="auto"

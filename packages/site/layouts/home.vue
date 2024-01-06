@@ -1,4 +1,6 @@
 <template>
+  <GiridLogo class="m-auto mt-6" />
+
   <main class="p-4 pb-19 text-center">
     <RouterView />
     <Footer />

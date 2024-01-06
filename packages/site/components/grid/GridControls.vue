@@ -24,8 +24,8 @@ function updateCols(e: Event) {
 </script>
 
 <template>
-  <div class="flex items-center justify-center p-2">
-    <div class="inline-flex flex-wrap items-center gap-2 px-2">
+  <div class="flex items-center justify-center pt-4">
+    <div class="inline-flex flex-wrap items-center gap-2 p-2">
       <label>
         {{ $t('label.row') }}
       </label>
@@ -33,12 +33,12 @@ function updateCols(e: Event) {
         id="username"
         :value="rows"
         type="number"
-        class="text-grass11 h-[35px] shrink-0 grow rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
+        class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
         @input="updateRows"
       >
     </div>
 
-    <div class="inline-flex flex-wrap items-center gap-2 px-2">
+    <div class="inline-flex flex-wrap items-center gap-2 p-2">
       <label>
         {{ $t('label.col') }}
       </label>
@@ -46,7 +46,7 @@ function updateCols(e: Event) {
         id="username"
         :value="cols"
         type="number"
-        class="text-grass11 h-[35px] shrink-0 grow rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
+        class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
         @input="updateCols"
       >
     </div>

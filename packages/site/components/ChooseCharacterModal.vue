@@ -122,11 +122,17 @@ function setCharacterName() {
 .scroll-content {
   max-height: calc(100vh - 350px);
 
-  background: rgba(60, 60, 60, 1)
-    linear-gradient(transparent, rgba(0, 0, 0, 0.3) 100%);
   background-position: bottom;
   background-size: 100% 100px;
   background-repeat: no-repeat;
   background-attachment: local, scroll;
+
+  background: rgba(233, 233, 233, 1)
+    linear-gradient(transparent, rgba(0, 0, 0, 0.1) 100%);
+
+  &.dark {
+    background: rgba(60, 60, 60, 1)
+      linear-gradient(transparent, rgba(0, 0, 0, 0.3) 100%);
+  }
 }
 </style>

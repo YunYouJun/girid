@@ -3,7 +3,6 @@
 // const { event } = useGtag()
 
 const app = useAppStore()
-
 const girid = useGiridStore()
 
 definePageMeta({
@@ -12,7 +11,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div mt="10" flex="~" justify="evenly" items="center">
+  <div mt="2" flex="~" justify="evenly" items="center">
     <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
       {{ $t('button.reset') }}
     </button>
@@ -20,18 +19,17 @@ definePageMeta({
     <DownloadGirid />
   </div>
 
-  <div m="auto" max-w="720px">
+  <GridControls
+    v-model:rows="girid.rows"
+    v-model:cols="girid.cols"
+  />
+
+  <div m="auto" max-w="800px">
     <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
-      <h1 text-xl py="4" font="bold" flex="~" items="center" justify="center">
-        <div color="red" i-ri-heart-line inline-flex />
-        <div mx-2 inline-flex>
-          {{ $t('intro.title') }}
-        </div>
-        <div color="red" i-ri-heart-line inline-flex />
-      </h1>
+      <GiridTitle :title="$t('intro.title')" />
 
       <Suspense>
-        <div m="auto" max-w="720px">
+        <div m="auto">
           <CharacterSearch />
           <UserCharacterGrid />
         </div>
@@ -41,14 +39,7 @@ definePageMeta({
         </template>
       </Suspense>
 
-      <a
-        class="text-xs" alt="site"
-        href="https://girid.yunyoujun.cn" target="_blank"
-        op="60"
-        my="1"
-      >
-        <span>girid.yunyoujun.cn</span>
-      </a>
+      <GeneratedByFooter />
     </div>
   </div>
 

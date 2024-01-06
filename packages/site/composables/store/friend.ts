@@ -3,8 +3,8 @@ import { useStorage } from '@vueuse/core'
 import type { GridItem } from '../../utils'
 
 export const useFriendStore = defineStore('friend', () => {
-  const cols = ref(4)
-  const rows = ref(4)
+  const cols = useStorage('girid:friend:cols', 5)
+  const rows = useStorage('girid:friend:rows', 3)
 
   const num = computed(() => cols.value * rows.value)
   const curGridIndex = ref(0)

@@ -16,6 +16,10 @@ async function toggleLocales() {
   const code = typeof newLocale === 'string' ? newLocale : newLocale.code
   switchLocalePath(code)
 }
+
+definePageMeta({
+  layout: 'home',
+})
 </script>
 
 <template>
