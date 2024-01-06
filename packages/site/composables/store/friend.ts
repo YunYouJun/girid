@@ -1,5 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import type { GridItem } from 'packages/site/utils'
+import { useStorage } from '@vueuse/core'
+import type { GridItem } from '../../utils'
 
 export const useFriendStore = defineStore('friend', () => {
   const cols = ref(4)

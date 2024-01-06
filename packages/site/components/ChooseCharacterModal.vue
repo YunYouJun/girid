@@ -43,7 +43,7 @@ function setCharacterName() {
         flex="~" justify="center" items="center"
         absolute right-1 top-1 @click="app.showChooseModal = false"
       >
-        <div i-ri-close-line />
+        <div class="i-ri-close-line" />
       </div>
       <div m="t-2 b-3">
         <h1 class="text-2xl font-bold" text="center">
@@ -57,7 +57,7 @@ function setCharacterName() {
           absolute right-2 inline-flex justify="center" items-center h="full" opacity="70"
           @click="search.keyword = ''"
         >
-          <div i-ri-close-line />
+          <div class="i-ri-close-line" />
         </div>
         <input
           id="input"
