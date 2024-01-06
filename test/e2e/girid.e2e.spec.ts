@@ -33,7 +33,7 @@ describe('e2e', async () => {
       suggestedFilename = download.suggestedFilename()
     })
 
-    await page.getByText('下载').click()
+    await page.getByLabel('Download Image').click()
     await vi.waitFor(() => {
       if (!suggestedFilename)
         throw new Error('Download not triggered')

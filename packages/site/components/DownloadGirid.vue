@@ -21,7 +21,7 @@ async function onClick() {
 </script>
 
 <template>
-  <button inline-flex class="girid-btn" w="21" @click="onClick">
+  <button inline-flex class="girid-btn" w="21" aria-label="Download Image" @click="onClick">
     {{ t('button.download') }}
   </button>
 </template>
