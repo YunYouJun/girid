@@ -49,7 +49,7 @@ function clickImage() {
       <UserCharacterCardImage :item="item" @click="clickImage" />
 
       <!-- loading -->
-      <div v-if="item.loading" class="absolute inset-0 text-xl" flex="~ col" justify="center" items="center" bg="black op-80">
+      <div v-if="item.loading" class="pointer-events-none absolute inset-0 text-xl" flex="~ col" justify="center" items="center" bg="black op-80">
         <Loading />
       </div>
     </div>
