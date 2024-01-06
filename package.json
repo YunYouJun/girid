@@ -30,9 +30,7 @@
     "dev": "pnpm -C packages/site dev",
     "generate": "pnpm -C packages/site generate",
     "lint": "eslint .",
-    "test": "pnpm run test:unit && pnpm run test:nuxt",
-    "test:nuxt": "vitest -c vitest.nuxt.config.ts",
-    "test:unit": "vitest",
+    "test": "vitest",
     "typecheck": "vue-tsc --noEmit"
   },
   "devDependencies": {

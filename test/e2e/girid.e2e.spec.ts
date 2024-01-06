@@ -39,5 +39,5 @@ describe('e2e', async () => {
         throw new Error('Download not triggered')
       expect(suggestedFilename).toBe(suggestedTableFilename)
     })
-  }, (isWindows ? 20 : 10) * 1000)
+  })
 })
