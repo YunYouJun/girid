@@ -61,5 +61,5 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
-      - run: pnpm install
-      - run: pnpm run test:unit
+      - run: pnpm install && pnpm exec playwright install
+      - run: pnpm run test
