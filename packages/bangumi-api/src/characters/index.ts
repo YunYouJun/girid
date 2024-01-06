@@ -13,7 +13,6 @@ export function characters(params: {
   return {
     /**
      * get character detail
-     * @returns
      */
     get: async () => {
       const { data } = await bangumiAxios.get<CharacterInfo>(`${prefix}/${characterId}`)
@@ -22,7 +21,6 @@ export function characters(params: {
 
     /**
      * get character image
-     * @returns
      */
     image: async (params: { type?: ImageType }) => {
       const { data } = await bangumiAxios.get<string>(`${prefix}/${characterId}/image`, {
@@ -33,7 +31,6 @@ export function characters(params: {
 
     /**
      * get character related subjects
-     * @returns
      */
     subjects: async () => {
       const { data } = await bangumiAxios.get<Subject>(`${prefix}/${characterId}/subjects`)
@@ -42,7 +39,6 @@ export function characters(params: {
 
     /**
      * get character related person
-     * @returns
      */
     persons: async () => {
       const { data } = await bangumiAxios.get(`${prefix}/${characterId}/persons`)

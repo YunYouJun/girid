@@ -1,29 +1,3 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "strict": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "vitest",
-      "vite/client",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
-    ],
-    "paths": {
-      "~/*": ["src/*"],
-      "bangumi-api": ["packages/bangumi-api/src/index.ts"]
-    }
-  },
-  "exclude": ["dist", "node_modules"]
+  "extends": "./packages/site/.nuxt/tsconfig.json"
 }

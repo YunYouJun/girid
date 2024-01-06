@@ -10,7 +10,6 @@ export function createSearch() {
      * 条目搜索
      * @param keywords 关键词 URL Encode
      * @param params
-     * @returns
      */
     async get(keywords: string, params: Partial<SearchParams> = {}) {
       // not start with 'v0'

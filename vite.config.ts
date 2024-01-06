@@ -1,85 +1,12 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
-import Legacy from '@vitejs/plugin-legacy'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import generateSitemap from 'vite-ssg-sitemap'
-import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import Inspect from 'vite-plugin-inspect'
 import LinkAttributes from 'markdown-it-link-attributes'
-import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 
-import { componentsDir } from '@yunlefun/vue-components'
-
 export default defineConfig({
-  resolve: {
-    alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
-      'bangumi-api': `${path.resolve(__dirname, 'packages/bangumi-api')}/src/index.ts`,
-    },
-  },
-
   plugins: [
-    // https://github.com/vitejs/vite/tree/main/packages/plugin-legacy
-    Legacy({
-      targets: ['defaults', 'not IE 11'],
-    }),
-
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => {
-            return ['github-corners'].includes(tag)
-          },
-        },
-      },
-    }),
-
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
-    }),
-
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
-
-    // https://github.com/antfu/unplugin-auto-import
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        'vue-i18n',
-        '@vueuse/head',
-        '@vueuse/core',
-      ],
-      dts: 'src/auto-imports.d.ts',
-      dirs: [
-        'src/composables',
-        'src/store',
-      ],
-      vueTemplate: true,
-    }),
-
-    // https://github.com/antfu/unplugin-vue-components
-    Components({
-      dirs: ['src/components', componentsDir],
-      // allow auto load markdown components under `./src/components/`
-      extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
-    }),
-
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
-
     // https://github.com/antfu/vite-plugin-vue-markdown
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
@@ -110,26 +37,7 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
 
-    // https://github.com/antfu/vite-plugin-inspect
-    // Visit http://localhost:3333/__inspect/ to see the inspector
-    Inspect(),
   ],
-
-  // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-    deps: {
-      inline: ['@vue', '@vueuse', 'vue-demi'],
-    },
-  },
-
-  // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    onFinished() { generateSitemap() },
-  },
 
   ssr: {
     // TODO: workaround until they support native ESM
