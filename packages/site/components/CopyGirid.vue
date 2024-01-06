@@ -3,8 +3,6 @@ import { toBlob } from 'html-to-image'
 
 import { copyBlobToClipboard } from 'copy-image-clipboard'
 
-const { t } = useI18n()
-
 async function onClick() {
   const container = document.getElementById('girid-container')
   if (!container)
