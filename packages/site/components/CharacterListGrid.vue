@@ -10,7 +10,35 @@ function clickCharacter(item: CharacterInfo) {
     return
 
   girid.curGridItem.name = item.name
-  girid.curGridItem.avatar = item.images.medium
+
+  // girid.curGridItem.avatar = item.images.medium
+
+  const imgUrlWithoutCors = getImageWithoutCors(item.images.medium)
+  // image url 转本地 base64
+
+  const img = new Image()
+  img.crossOrigin = 'Anonymous'
+  img.src = imgUrlWithoutCors
+
+  // load girid cors need time
+  girid.curGridItem.loading = true
+
+  img.onload = () => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    if (!ctx)
+      return
+
+    canvas.width = img.width
+    canvas.height = img.height
+    ctx.drawImage(img, 0, 0)
+
+    const dataURL = canvas.toDataURL('image/png')
+    if (!girid.curGridItem)
+      return
+    girid.curGridItem.avatar = dataURL
+    girid.curGridItem.loading = false
+  }
 
   app.showChooseModal = false
 }
@@ -22,8 +50,8 @@ function clickCharacter(item: CharacterInfo) {
       v-for="item in search.characterList" :key="item.id"
       flex="~ col" items="center" justify="center"
       cursor="pointer"
-      max-h="$anime-card-height"
-
+      w="$anime-card-width"
+      h="$anime-card-height"
       relative border shadow-md
       @click="clickCharacter(item)"
     >

@@ -35,9 +35,15 @@ function setCharacterName() {
 <template>
   <VueFinalModal
     class="flex justify-center overflow-auto"
-    content-class="overflow-auto  md:mt-8 max-w-xl"
+    content-class="overflow-auto md:pt-8 lt-sm:h-screen overflow-hidden w-full max-w-xl"
+    content-transition="vfm-fade-up"
+    overlay-transition="vfm-fade"
   >
-    <div relative rounded bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-900>
+    <div
+      flex="~ col"
+      class="min-h-500px lt-sm:h-full md:(rounded-lg p-4)"
+      relative rounded bg-white p-2 shadow dark:border-gray-700 dark:bg-dark-300
+    >
       <div
         class="icon" w="10" h="10"
         flex="~" justify="center" items="center"
@@ -83,27 +89,44 @@ function setCharacterName() {
           </span>
         </div>
       </div>
-      <AnimationListGrid v-if="!search.curAnimation" />
-      <CharacterListGrid v-else />
-      <div>
+
+      <div class="scroll-content rounded py-3" flex="~ grow" justify="center" items="start" overflow="auto">
+        <AnimationListGrid v-if="!search.curAnimation" />
+        <CharacterListGrid v-else />
+      </div>
+
+      <div mt-2 flex="~ col" gap="2">
         <button
           class="girid-btn"
-          my-1
           :disabled="!search.keyword"
           @click="go"
         >
           {{ t('modal.search_from_bangumi') }}
         </button>
 
-        <button class="girid-btn" my-1 @click="setCharacterName">
-          {{ t('modal.use_search_input') }}
-        </button>
+        <div flex gap="2">
+          <button class="girid-btn" @click="setCharacterName">
+            {{ t('modal.use_search_input') }}
+          </button>
 
-        <UploadImageBtn />
+          <UploadImageBtn class="h-full" />
+        </div>
       </div>
 
       <slot />
     </div>
   </VueFinalModal>
 </template>
-packages/site/utils
+
+<style lang="scss">
+.scroll-content {
+  max-height: calc(100vh - 350px);
+
+  background: rgba(60, 60, 60, 1)
+    linear-gradient(transparent, rgba(0, 0, 0, 0.3) 100%);
+  background-position: bottom;
+  background-size: 100% 100px;
+  background-repeat: no-repeat;
+  background-attachment: local, scroll;
+}
+</style>

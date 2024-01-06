@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
+
+definePageMeta({
+  layout: '404',
+})
 </script>
 
 <template>
@@ -7,8 +11,3 @@ const { t } = useI18n()
     {{ t('not-found') }}
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  layout: 404
-</route>

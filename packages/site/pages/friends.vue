@@ -10,6 +10,10 @@ const friend = useFriendStore()
 // todo
 // custom column and row
 // custom add & delete card item
+
+definePageMeta({
+  layout: 'home',
+})
 </script>
 
 <template>
@@ -21,15 +25,16 @@ const friend = useFriendStore()
     <DownloadGirid />
   </div>
 
-  <div>
-    Working...
+  <div class="my-4 flex items-center bg-yellow-200 p-3 text-yellow-900 leading-none lg:inline-flex lg:rounded-full" role="alert">
+    <span class="mr-2 flex-auto text-left font-semibold">
+      Work in progress...
+    </span>
   </div>
-  <div>
-    cols:
-    <input v-model="friend.cols">
-    rows:
-    <input v-model="friend.rows">
-  </div>
+
+  <GridControls
+    v-model:rows="friend.rows"
+    v-model:cols="friend.cols"
+  />
 
   <div m="auto">
     <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
@@ -62,8 +67,3 @@ const friend = useFriendStore()
 
   <ChooseCharacterModal v-model="app.showChooseModal" />
 </template>
-
-<route lang="yaml">
-meta:
-  layout: home
-</route>

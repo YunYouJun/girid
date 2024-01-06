@@ -36,7 +36,7 @@ function onFileChange(_e: Event) {
 </script>
 
 <template>
-  <button class="girid-btn" my-1 @click="onClick">
+  <button class="girid-btn" @click="onClick">
     {{ t('button.upload_image') }}
     <input
       ref="uploadImgInput" class="upload-image-input"

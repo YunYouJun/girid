@@ -22,6 +22,6 @@ async function onClick() {
 
 <template>
   <button inline-flex class="girid-btn" w="21" @click="onClick">
-    {{ t('button.copy') }}
+    {{ $t('button.copy') }}
   </button>
 </template>

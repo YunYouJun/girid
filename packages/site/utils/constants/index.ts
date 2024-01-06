@@ -12,6 +12,9 @@ export interface GridItem {
    */
   avatar?: string
   name?: string
+
+  // loading
+  loading?: boolean
 }
 
 export const defaultGridItems: GridItem[] = [

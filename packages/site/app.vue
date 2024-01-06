@@ -38,11 +38,11 @@ const url = pkg.repository.url
   <VitePwaManifest />
   <NuxtLayout>
     <NuxtPage />
+    <ModalsContainer />
   </NuxtLayout>
 
   <github-corners
     :url="url"
     blank
   />
-  <ModalsContainer />
 </template>

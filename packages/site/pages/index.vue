@@ -33,7 +33,7 @@ definePageMeta({
       <Suspense>
         <div m="auto" max-w="720px">
           <CharacterSearch />
-          <CharacterGrid />
+          <UserCharacterGrid />
         </div>
 
         <template #fallback>

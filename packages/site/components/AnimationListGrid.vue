@@ -10,19 +10,22 @@ const { locale } = useI18n()
     v-if="search.animationList.length"
     grid="~ cols-3 md:cols-4 gap-1" justify="center" items="center"
   >
+    <!-- max-h="$anime-card-height" -->
+
     <div
       v-for="item in search.animationList" :key="item.id"
       flex="~ col" items="center" justify="center" cursor="pointer"
       m="auto"
-      max-h="$anime-card-height"
+
+      w="$anime-card-width"
+      h="$anime-card-height"
 
       relative border shadow-md
-      class="aspect-ratio-0.65"
       @click="search.setAnimation(item)"
     >
       <div w="full" overflow-hidden object="center" h="full">
         <img
-          object="cover top"
+          class="object-cover object-top"
           w="full" h="full"
           :src="item.images?.medium || defaultAvatar" :alt="item.name"
         >
@@ -40,4 +43,3 @@ const { locale } = useI18n()
     </div>
   </div>
 </template>
-packages/site/utils

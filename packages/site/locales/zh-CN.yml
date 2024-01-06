@@ -31,3 +31,7 @@ author:
 
 search:
   anime: 先搜索动画名称
+
+label:
+  row: 行
+  col: 列

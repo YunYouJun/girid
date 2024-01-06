@@ -35,7 +35,7 @@ function onBlur() {
 </script>
 
 <template>
-  <div class="girid-character-name" text="center xs sm:sm" opacity-75 @click="onClick">
+  <div class="girid-character-name op-75" text="center xs sm:sm" @click="onClick">
     <span v-show="!editable" cursor="pointer">
       {{ customName || item.name || t('girid.none') }}
     </span>
@@ -50,4 +50,3 @@ function onBlur() {
     >
   </div>
 </template>
-packages/site/utils

@@ -9,7 +9,7 @@ const girid = useGiridStore()
     bg="$h5-c-card-border" p="2px sm:4px md:6px"
   >
     <div v-for="(item, i) in girid.userGridItems" :key="item.title">
-      <CharacterCard :key="i" :item="item" />
+      <UserCharacterCard :key="i" :item="item" />
     </div>
   </div>
 </template>

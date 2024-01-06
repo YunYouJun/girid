@@ -25,4 +25,3 @@ const imgSrc = computed(() => {
     >
   </div>
 </template>
-packages/site/utilspackages/site/utils

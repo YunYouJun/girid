@@ -19,5 +19,12 @@ html.dark {
 }
 
 :root {
-  --anime-card-height: calc((100vh - 8rem) / 4);
+  --anime-card-width: min(calc((100vw - 40px) / 3), 150px);
+  --anime-card-height: calc(var(--anime-card-width) * 1.4);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --anime-card-width: calc(500px / 4);
+  }
 }

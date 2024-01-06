@@ -31,3 +31,7 @@ author:
 
 search:
   anime: Search Animation Firstly
+
+label:
+  row: Row
+  col: Column

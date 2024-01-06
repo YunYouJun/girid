@@ -7,10 +7,7 @@ const props = defineProps<{
 }>()
 
 const imgSrc = computed(() => {
-  if (props.item.avatar?.startsWith('https://lain.bgm.tv'))
-    return `${import.meta.env.DEV ? 'http://localhost:3000' : ''}/api/bgm/cors?url=${props.item.avatar}`
-  else
-    return props.item.avatar || defaultAvatar
+  return getImageWithoutCors(props.item.avatar || '') || defaultAvatar
 })
 </script>
 
@@ -25,4 +22,3 @@ const imgSrc = computed(() => {
     >
   </div>
 </template>
-packages/site/utilspackages/site/utils

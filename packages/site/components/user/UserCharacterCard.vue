@@ -45,8 +45,13 @@ function clickImage() {
 
 <template>
   <div bg="$h5-c-card-bg" flex="~ col" h="full">
-    <div aspect="1" object="cover center" overflow="hidden">
-      <CharacterCardImage :item="item" @click="clickImage" />
+    <div aspect="1" object="cover center" overflow="hidden" class="relative">
+      <UserCharacterCardImage :item="item" @click="clickImage" />
+
+      <!-- loading -->
+      <div v-if="item.loading" class="absolute inset-0 text-xl" flex="~ col" justify="center" items="center" bg="black op-80">
+        <Loading />
+      </div>
     </div>
     <div flex="~ col 1" border="t-2 gray opacity-50" p="1" justify="center" items="center">
       <div text="center xs sm:base md:xl" font="bold" @click="clickTitle">
@@ -62,8 +67,7 @@ function clickImage() {
         >
       </div>
 
-      <CharacterName :item="item" />
+      <UserCharacterName :item="item" />
     </div>
   </div>
 </template>
-packages/site/utils
