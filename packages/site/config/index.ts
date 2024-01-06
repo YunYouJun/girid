@@ -10,3 +10,5 @@ export const config = {
 }
 
 export default config
+
+export const suggestedTableFilename = 'Girid-动画角色印象表.png'

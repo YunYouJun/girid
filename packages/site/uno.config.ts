@@ -27,6 +27,7 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
       warn: true,
+      prefix: 'i-',
     }),
     presetTypography(),
     // for mobile minimal size, do not need web fonts

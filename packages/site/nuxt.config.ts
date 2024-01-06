@@ -21,6 +21,9 @@ export default defineNuxtConfig({
     // extra
     '@nuxtjs/i18n',
     'nuxt-gtag',
+
+    // test
+    '@nuxt/test-utils/module',
   ],
 
   i18n: {

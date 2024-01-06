@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { downloadDataUrlAsImage } from '@yunlefun/utils'
 import { toPng } from 'html-to-image'
+import { suggestedTableFilename } from '~/config'
 
 const { t } = useI18n()
 
@@ -15,7 +16,7 @@ async function onClick() {
   })
 
   if (url)
-    downloadDataUrlAsImage(url, 'Girid-动画角色印象表.png')
+    downloadDataUrlAsImage(url, suggestedTableFilename)
 }
 </script>
 
