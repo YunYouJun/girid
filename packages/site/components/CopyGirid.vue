@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { toBlob } from 'html-to-image'
-
 import { copyBlobToClipboard } from 'copy-image-clipboard'
+
+import { toBlob } from 'html-to-image'
 
 async function onClick() {
   const container = document.getElementById('girid-container')

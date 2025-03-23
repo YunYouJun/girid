@@ -127,12 +127,10 @@ function setCharacterName() {
   background-repeat: no-repeat;
   background-attachment: local, scroll;
 
-  background: rgba(233, 233, 233, 1)
-    linear-gradient(transparent, rgba(0, 0, 0, 0.1) 100%);
+  background: rgba(233, 233, 233, 1) linear-gradient(transparent, rgba(0, 0, 0, 0.1) 100%);
 
   &.dark {
-    background: rgba(60, 60, 60, 1)
-      linear-gradient(transparent, rgba(0, 0, 0, 0.3) 100%);
+    background: rgba(60, 60, 60, 1) linear-gradient(transparent, rgba(0, 0, 0, 0.3) 100%);
   }
 }
 </style>

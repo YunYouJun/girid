@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { componentsDir } from '@yunlefun/vue'
-import { pwa } from './config/pwa'
 import { config } from './config'
+import { pwa } from './config/pwa'
 
 export default defineNuxtConfig({
   ssr: false,
@@ -42,6 +42,10 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locales',
     defaultLocale: 'zh-CN',
+
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   components: [
@@ -132,4 +136,6 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+
+  compatibilityDate: '2025-03-23',
 })

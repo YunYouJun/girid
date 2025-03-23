@@ -1,6 +1,6 @@
+import type { SearchParams, Subject } from '../types'
 import axios from 'axios'
 import { bangumiApiUrl } from '../axios'
-import type { SearchParams, Subject } from '../types'
 
 axios.defaults.baseURL = bangumiApiUrl
 

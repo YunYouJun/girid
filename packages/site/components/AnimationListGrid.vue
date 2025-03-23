@@ -36,9 +36,9 @@ const { locale } = useI18n()
         flex justify="center" items="center"
         bg="black opacity-70" text="white"
       >
-        <caption text="xs" opacity="70" font="bold" class="overflow-ellipsis">
+        <div text="xs" opacity="70" font="bold" class="overflow-ellipsis">
           {{ locale === 'zh-CN' ? item.name_cn : item.name }}
-        </caption>
+        </div>
       </div>
     </div>
   </div>

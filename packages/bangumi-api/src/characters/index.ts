@@ -1,5 +1,5 @@
-import { bangumiAxios } from '../axios'
 import type { CharacterInfo, ImageType, Subject } from '../types'
+import { bangumiAxios } from '../axios'
 
 export function characters(params: {
   /**

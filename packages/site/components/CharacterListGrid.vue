@@ -68,9 +68,9 @@ function clickCharacter(item: CharacterInfo) {
         flex justify="center" items="center"
         bg="black opacity-70" text="white"
       >
-        <caption text="xs" opacity="70" font="bold">
+        <div text="xs" opacity="70" font="bold">
           {{ item.name }}
-        </caption>
+        </div>
       </div>
     </div>
   </div>

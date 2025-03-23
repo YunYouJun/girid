@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
-import { describe, expect, it, vi } from 'vitest'
 import { getBrowser, setup, url } from '@nuxt/test-utils/e2e'
 import { isWindows } from 'std-env'
+import { describe, expect, it, vi } from 'vitest'
 import { suggestedTableFilename } from '../../packages/site/config'
 
 await setup({

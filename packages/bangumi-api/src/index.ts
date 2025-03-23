@@ -1,6 +1,6 @@
+import type { BangumiApiOptions } from './types'
 import { bangumiApiUrl, bangumiAxios } from './axios'
 import { characters } from './characters'
-import type { BangumiApiOptions } from './types'
 import { createSearch } from './search'
 import { subjects } from './subjects'
 

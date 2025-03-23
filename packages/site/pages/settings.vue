@@ -1,20 +1,13 @@
 <script setup lang="ts">
-const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-
-const availableLocales = computed(() => {
-  return (locales.value).filter((i) => {
-    return typeof i === 'string' && i !== locale.value
-  })
-})
+const { locale, setLocale } = useI18n()
 
 async function toggleLocales() {
-  // change to some real logic
-  const locales = availableLocales
-  const newLocale = locales.value[(locales.value.indexOf(locale.value) + 1) % locales.value.length]
-
-  const code = typeof newLocale === 'string' ? newLocale : newLocale.code
-  switchLocalePath(code)
+  if (locale.value === 'en') {
+    setLocale('zh-CN')
+  }
+  else {
+    setLocale('en')
+  }
 }
 
 definePageMeta({
@@ -32,8 +25,13 @@ definePageMeta({
       <div i-ri-translate />
     </a>
 
-    <RouterLink class="icon-btn mx-2" to="/about" :title="$t('button.about')">
+    <a
+      class="icon-btn mx-2"
+      href="https://docs.yunyoujun.cn/projects/girid.html"
+      :title="$t('button.about')"
+      target="_blank"
+    >
       <div i-ri-information-line />
-    </RouterLink>
+    </a>
   </nav>
 </template>

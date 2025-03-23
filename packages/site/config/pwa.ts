@@ -1,5 +1,5 @@
-import process from 'node:process'
 import type { ModuleOptions } from '@vite-pwa/nuxt'
+import process from 'node:process'
 import config from '.'
 
 const scope = '/'
