@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ModalsContainer } from 'vue-final-modal'
-import pkg from '../../package.json'
+import pkg from '../../../package.json'
 
 import config from './config'
 

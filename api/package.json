@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@vercel/node": "^5.1.14",
-    "axios": "^1.8.4"
+    "@vercel/node": "^5.3.24",
+    "axios": "^1.12.2"
   }
 }

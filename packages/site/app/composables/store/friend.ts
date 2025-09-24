@@ -1,6 +1,7 @@
 import type { GridItem } from '../../utils'
 import { useStorage } from '@vueuse/core'
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import { computed, ref } from 'vue'
 
 export const useFriendStore = defineStore('friend', () => {
   const cols = useStorage('girid:friend:cols', 5)
@@ -10,7 +11,7 @@ export const useFriendStore = defineStore('friend', () => {
   const curGridIndex = ref(0)
 
   const gridItems = useStorage<GridItem[]>('girid:friend:items', [])
-  const curGridItem = computed<GridItem>(() => gridItems.value[curGridIndex.value])
+  const curGridItem = computed<GridItem | undefined>(() => gridItems.value[curGridIndex.value])
 
   return {
     cols,

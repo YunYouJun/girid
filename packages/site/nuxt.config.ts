@@ -1,13 +1,12 @@
 import path from 'node:path'
 import { componentsDir } from '@yunlefun/vue'
-import { config } from './config'
-import { pwa } from './config/pwa'
+import { config } from './app/config'
+import { pwa } from './app/config/pwa'
 
 export default defineNuxtConfig({
   ssr: false,
 
   alias: {
-    '~/': `${path.resolve(__dirname)}/`,
     'bangumi-api': `${path.resolve(__dirname, '../bangumi-api')}/src/index.ts`,
   },
 
@@ -39,13 +38,8 @@ export default defineNuxtConfig({
         name: 'English',
       },
     ],
-    lazy: true,
     langDir: 'locales',
     defaultLocale: 'zh-CN',
-
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
   },
 
   components: [
@@ -137,5 +131,5 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  compatibilityDate: '2025-03-23',
+  compatibilityDate: '2025-09-24',
 })
