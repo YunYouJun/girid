@@ -5,6 +5,8 @@ import { defaultAvatar } from '~/utils'
 const props = defineProps<{
   item?: GridItem
 }>()
+const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
 
 const imgSrc = computed(() => {
   if (props.item && props.item.avatar)

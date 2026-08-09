@@ -1,6 +1,7 @@
 button:
   about: About
   back: Back
+  cancel: Cancel
   clear: Clear
   close: Close
   go: GO
@@ -13,6 +14,47 @@ button:
   upload_image: Upload Image
 brand:
   tagline: Character impression grid maker
+nav:
+  home: Home
+  friends: Friends
+  settings: Settings
+settings:
+  eyebrow: Preferences & data
+  title: Settings
+  description: Tune how Girid looks, back up drafts stored in this browser, or find project help.
+  appearance:
+    title: Appearance & language
+    description: Choose a display mode that fits your device and preferences.
+    theme: Theme
+    theme_system: System
+    theme_light: Light
+    theme_dark: Dark
+    language: Language
+    resolved_light: Currently light
+    resolved_dark: Currently dark
+  data:
+    title: Local data
+    description: Manage character images, labels, and grid sizes stored in this browser.
+    local_only: Drafts stay in this browser and are not uploaded to Girid servers.
+    export: Export backup
+    export_hint: Download a restorable JSON file
+    import: Restore backup
+    import_hint: Replace current drafts from a Girid JSON file
+    reset: Reset all drafts
+    reset_hint: Restore the default grids and sizes
+    reset_confirm: This replaces both character and friend grids and cannot be undone.
+    reset_action: Reset drafts
+    status_exported: Backup downloaded
+    status_imported: Backup restored
+    status_reset: Drafts reset
+    status_error: This backup could not be read. Choose a JSON file exported by Girid
+  about:
+    title: About Girid
+    description: A lightweight, shareable character impression grid maker.
+    guide: User guide
+    source: Source code
+    feedback: Send feedback
+    privacy: Girid works without an account. Apart from searches you start, draft content stays in this browser.
 intro:
   title: Girid - Animation Character Preference Table
   desc: 📱 A H5 Template(Vite + Vue) inspired by Vitesse.

@@ -1,6 +1,7 @@
 button:
   about: 关于
   back: 返回
+  cancel: 取消
   clear: 清空
   close: 关闭
   go: 确定
@@ -13,6 +14,47 @@ button:
   upload_image: 上传图片
 brand:
   tagline: 动画角色印象表生成器
+nav:
+  home: 首页
+  friends: 朋友
+  settings: 设置
+settings:
+  eyebrow: 偏好与数据
+  title: 设置
+  description: 调整 Girid 的显示方式，备份当前浏览器里的创作草稿，或查看项目帮助。
+  appearance:
+    title: 外观与语言
+    description: 选择适合当前设备和使用习惯的显示方式。
+    theme: 主题
+    theme_system: 跟随系统
+    theme_light: 亮色
+    theme_dark: 暗色
+    language: 语言
+    resolved_light: 当前为亮色
+    resolved_dark: 当前为暗色
+  data:
+    title: 本地数据
+    description: 管理当前浏览器中的角色图片、标题和表格尺寸。
+    local_only: 草稿只保存在当前浏览器，不会上传到 Girid 服务器。
+    export: 导出备份
+    export_hint: 下载一份可恢复的 JSON 文件
+    import: 恢复备份
+    import_hint: 从 Girid JSON 文件覆盖当前草稿
+    reset: 重置全部草稿
+    reset_hint: 恢复默认印象表与表格尺寸
+    reset_confirm: 这会覆盖动画角色表和群友印象表，且无法撤销。
+    reset_action: 确认重置
+    status_exported: 备份已下载
+    status_imported: 备份已恢复
+    status_reset: 草稿已重置
+    status_error: 无法读取该备份，请选择 Girid 导出的 JSON 文件
+  about:
+    title: 关于 Girid
+    description: 一个轻量、可分享的动画角色印象表生成器。
+    guide: 使用说明
+    source: 项目源码
+    feedback: 问题反馈
+    privacy: Girid 无需登录即可使用；除主动搜索请求外，草稿内容不会离开当前浏览器。
 intro:
   title: Girid - 动画角色印象表
   desc: 📱 固执己见的 Vite H5 项目模板

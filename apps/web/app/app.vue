@@ -3,6 +3,8 @@ import pkg from '../../../package.json'
 
 import config from './config'
 
+const colorMode = useColorMode()
+
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -12,7 +14,7 @@ useHead({
     { name: 'description', content: config.description },
     {
       name: 'theme-color',
-      content: computed(() => isDark.value ? config.mainColor : '#ffffff'),
+      content: computed(() => colorMode.value === 'dark' ? config.mainColor : '#ffffff'),
     },
   ],
   script: [

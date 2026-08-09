@@ -201,20 +201,72 @@ describe('e2e', async () => {
     }
   })
 
-  it('keeps settings actions touch friendly on mobile', async () => {
-    await page.setViewportSize({ width: 320, height: 568 })
-    await page.goto(url('/settings'), { waitUntil: 'networkidle' })
+  it('keeps the settings workspace responsive in both color schemes', async () => {
+    for (const colorScheme of ['light', 'dark'] as const) {
+      for (const viewport of [{ width: 320, height: 568 }, { width: 1280, height: 800 }]) {
+        await page.setViewportSize(viewport)
+        await page.emulateMedia({ colorScheme })
+        await page.goto(url('/settings'), { waitUntil: 'networkidle' })
+        await page.evaluate((scheme) => {
+          localStorage.setItem('girid-lang', 'zh-CN')
+          localStorage.setItem('nuxt-color-mode', scheme)
+        }, colorScheme)
+        await page.reload({ waitUntil: 'networkidle' })
 
-    const actions = await page.locator('.settings-action').all()
-    expect(actions).toHaveLength(3)
+        expect(await page.locator('.settings-card').count()).toBe(3)
+        expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBe(0)
 
-    for (const action of actions) {
-      const box = await action.boundingBox()
-      expect(box?.width).toBe(44)
-      expect(box?.height).toBe(44)
-      expect(await action.getAttribute('aria-label')).toBeTruthy()
+        const pageBox = await page.locator('.settings-page').boundingBox()
+        expect(pageBox).not.toBeNull()
+        expect(pageBox?.x).toBeGreaterThanOrEqual(0)
+        expect((pageBox?.x || 0) + (pageBox?.width || 0)).toBeLessThanOrEqual(viewport.width)
+
+        for (const control of await page.locator('.settings-segment').all()) {
+          const box = await control.boundingBox()
+          expect(box?.height).toBeGreaterThanOrEqual(44)
+        }
+      }
     }
+  }, 30_000)
 
-    expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBe(0)
-  })
+  it('persists settings preferences and manages local drafts safely', async () => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto(url('/settings'), { waitUntil: 'networkidle' })
+    await page.evaluate(() => {
+      localStorage.setItem('girid-lang', 'zh-CN')
+      localStorage.setItem('nuxt-color-mode', 'system')
+    })
+    await page.reload({ waitUntil: 'networkidle' })
+
+    await page.getByRole('button', { name: '暗色', exact: true }).click()
+    expect(await page.evaluate(() => document.documentElement.classList.contains('dark'))).toBe(true)
+
+    await page.getByRole('button', { name: /English/ }).click()
+    expect(await page.getByRole('heading', { name: 'Settings', level: 1 }).textContent()).toBe('Settings')
+    expect(await page.locator('.ylf-bottom-menu').textContent()).toContain('Settings')
+
+    await page.reload({ waitUntil: 'networkidle' })
+    expect(await page.getByRole('heading', { name: 'Settings', level: 1 }).textContent()).toBe('Settings')
+    expect(await page.evaluate(() => document.documentElement.classList.contains('dark'))).toBe(true)
+
+    const downloadPromise = page.waitForEvent('download')
+    await page.getByRole('button', { name: /Export backup/ }).click()
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toMatch(/^girid-backup-\d{4}-\d{2}-\d{2}\.json$/)
+    expect(await page.getByRole('status').textContent()).toContain('Backup downloaded')
+
+    const backupPath = await download.path()
+    expect(backupPath).toBeTruthy()
+    await page.locator('#settings-backup-file').setInputFiles(backupPath || '')
+    expect(await page.getByRole('status').textContent()).toContain('Backup restored')
+
+    await page.getByRole('button', { name: /Reset all drafts/ }).click()
+    expect(await page.getByRole('alert').textContent()).toContain('cannot be undone')
+    await page.getByRole('button', { name: 'Cancel', exact: true }).click()
+    expect(await page.getByRole('alert').count()).toBe(0)
+
+    await page.getByRole('button', { name: /Reset all drafts/ }).click()
+    await page.getByRole('button', { name: 'Reset drafts', exact: true }).click()
+    expect(await page.getByRole('status').textContent()).toContain('Drafts reset')
+  }, 60_000)
 })

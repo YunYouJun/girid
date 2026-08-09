@@ -1,35 +1,35 @@
 <script lang="ts" setup>
 import type { BottomMenuItem } from '@yunlefun/vue'
-import { ref } from 'vue'
+import { computed } from 'vue'
 
-const items: BottomMenuItem[] = [
+const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
+const items = computed<BottomMenuItem[]>(() => [
   {
     icon: 'i-ri-home-line',
     activeIcon: 'i-ri-home-fill',
-    title: '首页',
+    title: t('nav.home'),
     to: '/',
   },
   {
     icon: 'i-ri-compass-2-line',
     activeIcon: 'i-ri-compass-2-fill',
-    title: '朋友',
+    title: t('nav.friends'),
     to: '/friends',
   },
   {
     icon: 'i-ri-settings-line',
     activeIcon: 'i-ri-settings-fill',
-    title: '设置',
+    title: t('nav.settings'),
     to: '/settings',
   },
-]
+])
+const active = computed(() => route.path)
 
-const route = useRoute()
-const router = useRouter()
-const active = ref(route.path)
 function onClick(item: BottomMenuItem) {
-  active.value = item.to || ''
-  if (active.value)
-    router.push(active.value)
+  if (item.to)
+    void router.push(item.to)
 }
 </script>
 
