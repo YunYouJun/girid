@@ -2,7 +2,7 @@
   "buildCommand": "pnpm generate",
   "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && corepack pnpm install --frozen-lockfile",
   "outputDirectory": "apps/web/.output/public",
-  "nodeVersion": "24.11.0",
+  "nodeVersion": "24.5.0",
   "rewrites": [
     {
       "source": "/*",
