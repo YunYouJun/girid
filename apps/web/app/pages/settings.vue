@@ -8,7 +8,6 @@ import { useSettingsPreferences } from '../composables/useSettingsPreferences'
 const { t } = useI18n()
 const {
   locale,
-  resolvedTheme,
   setLanguage,
   setTheme,
   theme,
@@ -68,7 +67,6 @@ definePageMeta({
     <div class="settings-layout">
       <SettingsAppearanceCard
         :locale="locale"
-        :resolved-theme="resolvedTheme"
         :theme="theme"
         @change-locale="handleLocaleChange"
         @change-theme="handleThemeChange"

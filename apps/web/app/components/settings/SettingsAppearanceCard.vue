@@ -4,7 +4,6 @@ import type { ThemePreference } from '../../composables/useSettingsPreferences'
 
 defineProps<{
   locale: AppLocale
-  resolvedTheme: 'light' | 'dark'
   theme: ThemePreference
 }>()
 
@@ -40,15 +39,6 @@ const localeOptions: Array<{ value: AppLocale, shortLabel: string, label: string
         </p>
       </div>
     </header>
-
-    <div class="appearance-preview" aria-hidden="true">
-      <span class="appearance-preview-cell appearance-preview-cell--brand" />
-      <span class="appearance-preview-cell" />
-      <span class="appearance-preview-cell" />
-      <span class="appearance-preview-status">
-        {{ $t(`settings.appearance.resolved_${resolvedTheme}`) }}
-      </span>
-    </div>
 
     <fieldset class="settings-fieldset">
       <legend class="settings-field-label">
@@ -135,37 +125,6 @@ const localeOptions: Array<{ value: AppLocale, shortLabel: string, label: string
   color: var(--app-c-muted);
   font-size: 0.8125rem;
   line-height: 1.55;
-}
-
-.appearance-preview {
-  display: grid;
-  grid-template-columns: repeat(3, 2rem) 1fr;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 1.1rem 0;
-  padding: 0.65rem;
-  border: 1px solid var(--app-c-line);
-  border-radius: 0.9rem;
-  background: var(--app-c-control);
-}
-
-.appearance-preview-cell {
-  height: 2rem;
-  border: 1px solid var(--app-c-line);
-  border-radius: 0.55rem;
-  background: var(--app-c-surface-solid);
-}
-
-.appearance-preview-cell--brand {
-  border-color: var(--app-c-brand);
-  background: var(--app-c-brand);
-}
-
-.appearance-preview-status {
-  justify-self: end;
-  color: var(--app-c-muted);
-  font-size: 0.75rem;
-  font-weight: 700;
 }
 
 .settings-fieldset {

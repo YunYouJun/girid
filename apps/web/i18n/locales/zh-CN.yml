@@ -30,8 +30,6 @@ settings:
     theme_light: 亮色
     theme_dark: 暗色
     language: 语言
-    resolved_light: 当前为亮色
-    resolved_dark: 当前为暗色
   data:
     title: 本地数据
     description: 管理当前浏览器中的角色图片、标题和表格尺寸。

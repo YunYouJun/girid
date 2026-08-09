@@ -30,8 +30,6 @@ settings:
     theme_light: Light
     theme_dark: Dark
     language: Language
-    resolved_light: Currently light
-    resolved_dark: Currently dark
   data:
     title: Local data
     description: Manage character images, labels, and grid sizes stored in this browser.

@@ -15,7 +15,6 @@ export function useSettingsPreferences() {
 
     return 'system'
   })
-  const resolvedTheme = computed(() => colorMode.value === 'dark' ? 'dark' : 'light')
   const locale = computed(() => lang.value)
 
   function setTheme(value: ThemePreference) {
@@ -28,7 +27,6 @@ export function useSettingsPreferences() {
 
   return {
     locale,
-    resolvedTheme,
     setLanguage,
     setTheme,
     theme,
