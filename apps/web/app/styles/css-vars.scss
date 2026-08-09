@@ -1,30 +1,58 @@
 :root {
-  --h5-c-primary: #00aba9;
+  color-scheme: light;
 
-  --h5-c-bg: rgba(248, 248, 248);
-  --h5-c-text: #000;
+  --app-c-bg: #f5f5fa;
+  --app-c-bg-accent: #fff0f3;
+  --app-c-surface: rgb(255 255 255 / 86%);
+  --app-c-surface-solid: #fff;
+  --app-c-control: #fbfbfd;
+  --app-c-text: #24243a;
+  --app-c-muted: #717287;
+  --app-c-line: #e3e3ec;
+  --app-c-brand: #ec5d7a;
+  --app-c-brand-strong: #d94769;
+  --app-c-brand-soft: #f49aae;
+  --app-c-accent: #303477;
+  --app-c-focus: rgb(236 93 122 / 22%);
+  --app-shadow-sm: 0 8px 28px rgb(42 43 74 / 7%);
+  --app-shadow-md: 0 18px 55px rgb(42 43 74 / 11%);
 
+  --h5-c-primary: var(--app-c-brand);
+  --h5-c-bg: #f8f8fa;
+  --h5-c-text: #11121a;
   --h5-c-card-bg: #fff;
-  --h5-c-card-border: rgba(0, 0, 0, var(--un-border-opacity, 1));
+  --h5-c-card-border: rgb(17 18 26 / var(--un-border-opacity, 1));
+
+  --girid-card-width: 9.25rem;
 }
 
 html.dark {
   color-scheme: dark;
 
-  --h5-c-bg: #333;
+  --app-c-bg: #181923;
+  --app-c-bg-accent: #2a1d2b;
+  --app-c-surface: rgb(36 37 49 / 88%);
+  --app-c-surface-solid: #242531;
+  --app-c-control: #2c2d3a;
+  --app-c-text: #f5f4f8;
+  --app-c-muted: #adaebe;
+  --app-c-line: #393a49;
+  --app-c-brand: #ff718b;
+  --app-c-brand-strong: #ff8aa0;
+  --app-c-brand-soft: #a94c62;
+  --app-c-accent: #9fa7ff;
+  --app-c-focus: rgb(255 113 139 / 24%);
+  --app-shadow-sm: 0 10px 32px rgb(0 0 0 / 24%);
+  --app-shadow-md: 0 22px 60px rgb(0 0 0 / 34%);
+
+  --h5-c-bg: #30313a;
   --h5-c-text: #fff;
-
-  --h5-c-card-bg: black;
-  --h5-c-card-border: rgba(255, 255, 255, var(--un-border-opacity, 1));
+  --h5-c-card-bg: #08090d;
+  --h5-c-card-border: rgb(255 255 255 / var(--un-border-opacity, 1));
 }
 
-:root {
-  --anime-card-width: min(calc((100vw - 40px) / 3), 150px);
-  --anime-card-height: calc(var(--anime-card-width) * 1.4);
-}
-
-@media (min-width: 768px) {
+@media (max-width: 639px) {
   :root {
-    --anime-card-width: calc(500px / 4);
+    --girid-card-width: clamp(6.25rem, calc((100vw - 3rem) / 3), 8rem);
   }
 }

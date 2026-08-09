@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="girid-mark-title">
+  <title id="girid-mark-title">Girid</title>
+  <rect width="56" height="56" x="4" y="4" fill="#303477" rx="16"/>
+  <g fill="#fff">
+    <rect width="10" height="10" x="14" y="14" rx="3"/>
+    <rect width="10" height="10" x="27" y="14" rx="3"/>
+    <rect width="10" height="10" x="40" y="14" rx="3"/>
+    <rect width="10" height="10" x="14" y="27" rx="3"/>
+    <rect width="10" height="10" x="40" y="27" rx="3"/>
+    <rect width="10" height="10" x="14" y="40" rx="3"/>
+    <rect width="10" height="10" x="27" y="40" rx="3"/>
+    <rect width="10" height="10" x="40" y="40" rx="3"/>
+  </g>
+  <path fill="#ff647c" d="M32 38.3c-1.1-1-6.1-4.5-6.1-8.2a4 4 0 0 1 7.1-2.5 4 4 0 0 1 7.1 2.5c0 3.7-5 7.2-6.1 8.2a1.5 1.5 0 0 1-2 0Z"/>
+</svg>

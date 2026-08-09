@@ -15,13 +15,6 @@ useHead({
       content: computed(() => isDark.value ? config.mainColor : '#ffffff'),
     },
   ],
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
-    },
-  ],
   script: [
     {
       src: 'https://fastly.jsdelivr.net/npm/wc-github-corners@latest',

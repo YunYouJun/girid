@@ -3,7 +3,7 @@ const friend = useFriendStore()
 
 const styles = computed(() => {
   return {
-    'grid-template-columns': `repeat(${friend.cols}, minmax(0, 1fr))`,
+    'grid-template-columns': `repeat(${friend.cols}, var(--girid-card-width))`,
     'grid-template-rows': `repeat(${friend.rows}, minmax(0, 1fr))`,
   }
 })
@@ -22,3 +22,10 @@ const styles = computed(() => {
     </template>
   </div>
 </template>
+
+<style scoped>
+.friend-grid {
+  width: max-content;
+  max-width: none;
+}
+</style>

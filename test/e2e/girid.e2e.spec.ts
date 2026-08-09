@@ -24,6 +24,35 @@ describe('e2e', async () => {
 
     expect(bodyHTML).toContain('Girid')
     expect(await page.locator('.girid-btn').all()).toHaveLength(3)
+    expect(await page.locator('.brand-mark').getAttribute('src')).toBe('/girid-mark.svg')
+    expect(await page.locator('link[rel="icon"]').getAttribute('href')).toBe('/favicon.svg')
+  })
+
+  it('keeps the workspace responsive while the generated grid remains scrollable', async () => {
+    for (const colorScheme of ['light', 'dark'] as const) {
+      await page.setViewportSize({ width: 320, height: 568 })
+      await page.emulateMedia({ colorScheme })
+      await page.goto(url('/'), { waitUntil: 'networkidle' })
+      await page.evaluate(scheme => document.documentElement.classList.toggle('dark', scheme === 'dark'), colorScheme)
+
+      const toolbarBox = await page.locator('.workspace-toolbar').boundingBox()
+      const preview = page.locator('.preview-scroll')
+      const previewMetrics = await preview.evaluate(el => ({
+        clientWidth: el.clientWidth,
+        scrollWidth: el.scrollWidth,
+      }))
+
+      expect(toolbarBox).not.toBeNull()
+      expect(toolbarBox?.x).toBeGreaterThanOrEqual(0)
+      expect((toolbarBox?.x || 0) + (toolbarBox?.width || 0)).toBeLessThanOrEqual(320)
+      expect(previewMetrics.scrollWidth).toBeGreaterThan(previewMetrics.clientWidth)
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBe(0)
+
+      for (const button of await page.locator('.workspace-actions .girid-btn').all()) {
+        const box = await button.boundingBox()
+        expect(box?.height).toBeGreaterThanOrEqual(44)
+      }
+    }
   })
 
   it('serves the Bangumi image proxy through Nuxt with strict origin checks', async () => {

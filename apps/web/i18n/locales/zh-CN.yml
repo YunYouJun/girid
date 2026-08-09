@@ -11,6 +11,8 @@ button:
   copy: 复制
   download: 下载
   upload_image: 上传图片
+brand:
+  tagline: 动画角色印象表生成器
 intro:
   title: Girid - 动画角色印象表
   desc: 📱 固执己见的 Vite H5 项目模板
@@ -37,3 +39,8 @@ search:
 label:
   row: 行
   col: 列
+  grid_settings: 表格尺寸
+  preview: 印象表预览
+  actions: 印象表操作
+hint:
+  scroll_preview: 可左右滑动查看完整表格

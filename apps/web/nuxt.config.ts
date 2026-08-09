@@ -104,7 +104,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'apple-touch-icon', href: '/safari-pinned-tab.svg' },
+        { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: config.mainColor },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

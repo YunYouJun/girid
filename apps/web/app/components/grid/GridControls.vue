@@ -24,31 +24,109 @@ function updateCols(e: Event) {
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div class="inline-flex flex-wrap items-center gap-2 p-2">
-      <label for="grid-rows">
+  <fieldset class="grid-controls">
+    <legend class="sr-only">
+      {{ $t('label.grid_settings') }}
+    </legend>
+
+    <label class="grid-control-field" for="grid-rows">
+      <span class="grid-control-label">
         {{ $t('label.row') }}
-      </label>
+      </span>
       <input
         id="grid-rows"
         :value="rows"
         type="number"
-        class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
+        min="1"
+        max="10"
+        inputmode="numeric"
+        class="grid-control-input"
         @input="updateRows"
       >
-    </div>
+    </label>
 
-    <div class="inline-flex flex-wrap items-center gap-2 p-2">
-      <label for="grid-cols">
+    <label class="grid-control-field" for="grid-cols">
+      <span class="grid-control-label">
         {{ $t('label.col') }}
-      </label>
+      </span>
       <input
         id="grid-cols"
         :value="cols"
         type="number"
-        class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
+        min="1"
+        max="10"
+        inputmode="numeric"
+        class="grid-control-input"
         @input="updateCols"
       >
-    </div>
-  </div>
+    </label>
+  </fieldset>
 </template>
+
+<style scoped>
+.grid-controls {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.grid-control-field {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid-control-label {
+  color: var(--app-c-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.grid-control-input {
+  width: 4rem;
+  height: 2.75rem;
+  border: 1px solid var(--app-c-line);
+  border-radius: 0.75rem;
+  background: var(--app-c-control);
+  color: var(--app-c-text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.grid-control-input:hover {
+  border-color: var(--app-c-brand-soft);
+}
+
+.grid-control-input:focus-visible {
+  border-color: var(--app-c-brand);
+  box-shadow: 0 0 0 3px var(--app-c-focus);
+  outline: none;
+}
+
+@media (max-width: 420px) {
+  .grid-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .grid-control-field {
+    flex: 1;
+  }
+
+  .grid-control-input {
+    min-width: 0;
+    flex: 1;
+  }
+}
+</style>

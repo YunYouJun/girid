@@ -11,6 +11,8 @@ button:
   copy: Copy
   download: Download
   upload_image: Upload Image
+brand:
+  tagline: Character impression grid maker
 intro:
   title: Girid - Animation Character Preference Table
   desc: 📱 A H5 Template(Vite + Vue) inspired by Vitesse.
@@ -37,3 +39,8 @@ search:
 label:
   row: Row
   col: Column
+  grid_settings: Grid size
+  preview: Grid preview
+  actions: Grid actions
+hint:
+  scroll_preview: Swipe horizontally to view the full grid

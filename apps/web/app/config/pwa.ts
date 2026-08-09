@@ -14,7 +14,8 @@ export const pwa: ModuleOptions = {
     name: config.title,
     short_name: config.shortName,
     description: config.description,
-    theme_color: '#ffffff',
+    background_color: '#f6f7fb',
+    theme_color: config.mainColor,
     icons: [
       {
         src: 'favicon.svg',

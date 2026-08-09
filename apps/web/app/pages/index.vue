@@ -11,37 +11,49 @@ definePageMeta({
 </script>
 
 <template>
-  <div m="auto" max-w="800px">
-    <GridControls
-      v-model:rows="girid.rows"
-      v-model:cols="girid.cols"
-    />
+  <section class="workspace-shell">
+    <div class="workspace-toolbar">
+      <GridControls
+        v-model:rows="girid.rows"
+        v-model:cols="girid.cols"
+      />
 
-    <div mt="4" flex="~" justify="evenly" items="center">
-      <button inline-flex class="girid-btn" w="21" @click="girid.reset()">
-        {{ $t('button.reset') }}
-      </button>
-      <CopyGirid />
-      <DownloadGirid />
+      <div class="workspace-actions" :aria-label="$t('label.actions')">
+        <button type="button" class="girid-btn" @click="girid.reset()">
+          <span i-ri-refresh-line aria-hidden="true" />
+          <span>{{ $t('button.reset') }}</span>
+        </button>
+        <CopyGirid />
+        <DownloadGirid />
+      </div>
     </div>
 
-    <div id="girid-container" flex="~ col" p="1" bg="$h5-c-bg">
-      <GiridTitle :title="$t('intro.title')" />
+    <section class="preview-panel" :aria-label="$t('label.preview')">
+      <div class="preview-heading">
+        <span>{{ $t('label.preview') }}</span>
+        <span class="preview-hint">{{ $t('hint.scroll_preview') }}</span>
+      </div>
 
-      <Suspense>
-        <div m="auto">
-          <CharacterSearch />
-          <UserCharacterGrid />
+      <div class="preview-scroll" tabindex="0">
+        <div id="girid-container" class="render-canvas">
+          <GiridTitle :title="$t('intro.title')" />
+
+          <Suspense>
+            <div m="auto">
+              <CharacterSearch />
+              <UserCharacterGrid />
+            </div>
+
+            <template #fallback>
+              <Loading />
+            </template>
+          </Suspense>
+
+          <GeneratedByFooter />
         </div>
-
-        <template #fallback>
-          <Loading />
-        </template>
-      </Suspense>
-
-      <GeneratedByFooter />
-    </div>
-  </div>
+      </div>
+    </section>
+  </section>
 
   <ChooseCharacterModal v-model="app.showChooseModal" />
 </template>

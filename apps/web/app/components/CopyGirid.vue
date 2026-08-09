@@ -19,7 +19,8 @@ async function onClick() {
 </script>
 
 <template>
-  <button inline-flex class="girid-btn" w="21" @click="onClick">
-    {{ $t('button.copy') }}
+  <button type="button" class="girid-btn" @click="onClick">
+    <span i-ri-file-copy-line aria-hidden="true" />
+    <span>{{ $t('button.copy') }}</span>
   </button>
 </template>

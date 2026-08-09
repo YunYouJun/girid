@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="mx-auto mt-2 text-center opacity-75" text="xs">
+  <footer class="app-footer">
     <div>
       <div>
         <span>
@@ -25,5 +25,20 @@ const { t } = useI18n()
         </a>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
+
+<style scoped>
+.app-footer {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  color: var(--app-c-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.app-footer a {
+  text-underline-offset: 0.2em;
+}
+</style>

@@ -3,7 +3,7 @@ const girid = useGiridStore()
 
 const styles = computed(() => {
   return {
-    'grid-template-columns': `repeat(${girid.cols}, minmax(0, 1fr))`,
+    'grid-template-columns': `repeat(${girid.cols}, var(--girid-card-width))`,
     'grid-template-rows': `repeat(${girid.rows}, minmax(0, 1fr))`,
   }
 })
@@ -15,7 +15,7 @@ const gridItems = computed(() => {
 
 <template>
   <div
-    class="character-gird shadow transition hover:shadow-md"
+    class="character-gird character-grid shadow transition hover:shadow-md"
     grid="~ gap-2px sm:gap-4px md:gap-6px"
     bg="$h5-c-card-border" p="2px sm:4px md:6px"
     :style="styles"
@@ -26,3 +26,10 @@ const gridItems = computed(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.character-grid {
+  width: max-content;
+  max-width: none;
+}
+</style>
