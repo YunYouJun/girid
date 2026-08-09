@@ -1,6 +1,7 @@
 {
-  "buildCommand": "pnpm generate",
+  "buildCommand": "NITRO_PRESET=static pnpm generate",
   "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && corepack pnpm install --frozen-lockfile",
+  "outputDirectory": "apps/web/.output/public",
   "headers": [
     {
       "source": "/api/(.*)",
