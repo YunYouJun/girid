@@ -1,4 +1,6 @@
 {
+  "buildCommand": "pnpm generate",
+  "outputDirectory": "apps/web/.output/public",
   "headers": [
     {
       "source": "/api/(.*)",

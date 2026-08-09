@@ -29,4 +29,4 @@ export const useFriendStore = defineStore('friend', () => {
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useGiridStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useFriendStore, import.meta.hot))

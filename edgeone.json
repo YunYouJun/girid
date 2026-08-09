@@ -1,0 +1,23 @@
+{
+  "buildCommand": "pnpm generate",
+  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --frozen-lockfile",
+  "outputDirectory": "apps/web/.output/public",
+  "nodeVersion": "24.11.0",
+  "rewrites": [
+    {
+      "source": "/*",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_nuxt/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,9 @@
 {
   "type": "module",
+  "dependencies": {
+    "axios": "catalog:"
+  },
   "devDependencies": {
-    "@vercel/node": "^5.3.24",
-    "axios": "^1.12.2"
+    "@types/node": "catalog:"
   }
 }

@@ -1,13 +1,22 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
 import type { Method } from 'axios'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import axios from 'axios'
+
+interface ApiRequest extends IncomingMessage {
+  body?: unknown
+}
+
+interface ApiResponse extends ServerResponse {
+  send: (body: unknown) => ApiResponse
+  status: (statusCode: number) => ApiResponse
+}
 
 /**
  * /api/bgm/cors?url=xxx
  * @param request
  * @param response
  */
-async function handler(request: VercelRequest, response: VercelResponse) {
+async function handler(request: ApiRequest, response: ApiResponse) {
   if (!request.url) {
     response.status(404).send('Need Url')
     return
@@ -33,7 +42,9 @@ async function handler(request: VercelRequest, response: VercelResponse) {
     responseType: 'arraybuffer',
   })
   response.setHeader('Cache-Control', 's-maxage=43200')
-  response.setHeader('Content-Type', res.headers['content-type'])
+  const contentType = res.headers['content-type']
+  if (typeof contentType === 'string')
+    response.setHeader('Content-Type', contentType)
   response.status(res.status).send(res.data)
 }
 

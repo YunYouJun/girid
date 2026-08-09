@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   ssr: false,
 
   alias: {
-    'bangumi-api': `${path.resolve(__dirname, '../bangumi-api')}/src/index.ts`,
+    'bangumi-api': `${path.resolve(__dirname, '../../packages/bangumi-api')}/src/index.ts`,
   },
 
   modules: [
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: false,
-      routes: ['/'],
+      routes: ['/', '/friends', '/settings'],
       ignore: ['/hi'],
     },
   },

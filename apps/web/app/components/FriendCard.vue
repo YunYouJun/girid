@@ -64,15 +64,14 @@ function onFileChange(_e: Event) {
     if (!result)
       return
 
-    if (!friend.curGridItem) {
-      friend.gridItems[friend.curGridIndex] = {
-        title: '色批',
-        title_en: '',
-      }
+    const gridItem = friend.curGridItem ?? {
+      title: '色批',
+      title_en: '',
     }
+    friend.gridItems[friend.curGridIndex] = gridItem
 
-    friend.curGridItem.avatar = result.toString()
-    friend.curGridItem.name = file.name
+    gridItem.avatar = result.toString()
+    gridItem.name = file.name
   }
   reader.readAsDataURL(file)
 }
@@ -106,4 +105,3 @@ function onFileChange(_e: Event) {
     </div>
   </div>
 </template>
-packages/site/utils

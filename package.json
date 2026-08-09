@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0-beta.1",
   "private": true,
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.34.5",
   "description": "",
   "author": {
     "name": "YunYouJun",
@@ -23,29 +23,32 @@
     "grid"
   ],
   "main": "index.js",
+  "engines": {
+    "node": "^22.19.0 || ^24.11.0 || >=26.0.0"
+  },
   "scripts": {
     "build": "pnpm run generate",
-    "build:site": "pnpm -C packages/site build",
+    "build:web": "pnpm -C apps/web build",
     "build:bangumi": "pnpm -C packages/bangumi-api build",
-    "dev": "pnpm -C packages/site dev",
-    "generate": "pnpm -C packages/site generate",
+    "dev": "pnpm -C apps/web dev",
+    "generate": "pnpm -C apps/web generate",
     "lint": "eslint .",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.4.1",
-    "@nuxt/test-utils": "^3.19.2",
-    "@types/node": "^24.5.2",
-    "@vue/test-utils": "^2.4.6",
+    "@antfu/eslint-config": "catalog:",
+    "@nuxt/test-utils": "catalog:",
+    "@types/node": "catalog:",
+    "@vue/test-utils": "catalog:",
     "bangumi-api": "workspace:*",
-    "eslint": "^9.36.0",
-    "https-localhost": "^4.7.1",
-    "playwright-core": "^1.55.1",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
+    "eslint": "catalog:",
+    "https-localhost": "catalog:",
+    "playwright-core": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.8"
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }

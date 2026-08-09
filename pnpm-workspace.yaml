@@ -1,5 +1,52 @@
 packages:
+  - apps/*
   - packages/*
   - api
+overrides:
+  webpack: ^5.104.1
 catalog:
-  vite: ^7.1.7
+  '@antfu/eslint-config': ^9.3.0
+  '@iconify-json/carbon': ^1.2.25
+  '@iconify-json/ri': ^1.2.10
+  '@iconify-json/twemoji': ^1.2.5
+  '@nuxt/test-utils': ^4.1.0
+  '@nuxtjs/color-mode': ^4.0.1
+  '@nuxtjs/i18n': ^10.6.0
+  '@pinia/nuxt': ^1.0.1
+  '@types/node': ^24.13.3
+  '@unocss/eslint-config': ^66.7.5
+  '@unocss/nuxt': ^66.7.5
+  '@vite-pwa/nuxt': ^1.1.1
+  '@vue/test-utils': ^2.4.11
+  '@vueuse/nuxt': ^14.4.0
+  '@yunlefun/utils': ^0.1.2
+  '@yunlefun/vue': 0.0.8
+  '@yunlefun/vueuse': ^0.1.2
+  axios: ^1.19.0
+  bumpp: ^12.2.0
+  consola: ^3.4.2
+  copy-image-clipboard: ^2.1.2
+  eslint: ^10.8.1
+  eslint-plugin-format: ^2.0.1
+  html-to-image: ^1.11.13
+  https-localhost: ^4.7.1
+  nuxt: ^4.5.2
+  nuxt-gtag: ^4.1.0
+  oxc-parser: ^0.143.0
+  pinia: ^4.0.2
+  playwright-core: ^1.62.1
+  radix-vue: ^1.9.17
+  rimraf: ^6.1.3
+  sass: ^1.102.0
+  tsx: ^4.23.11
+  typescript: ^5.9.3
+  unbuild: ^3.6.1
+  vite: ^8.2.1
+  vitest: ^4.1.10
+  vue-final-modal: ^4.5.5
+  vue-gtag-next: ^1.14.0
+  vue-i18n: ^11.4.8
+  vue-tsc: ^3.3.9
+  webpack: ^5.104.1
+  workbox-build: ^7.4.1
+  workbox-window: ^7.4.1

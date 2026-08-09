@@ -16,8 +16,8 @@
 ## Dev
 
 ```bash
-npm run generate
-# static content in ./packages/site/dist
+pnpm generate
+# static content in ./apps/web/.output/public
 ```
 
 ## Thanks

@@ -18,7 +18,7 @@ const imgSrc = computed(() => {
       class="h-full w-full"
       :src="imgSrc"
       :alt="item.name"
-      :class="isDark"
+      :class="{ dark: isDark }"
     >
   </div>
 </template>

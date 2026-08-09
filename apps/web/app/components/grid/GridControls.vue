@@ -26,11 +26,11 @@ function updateCols(e: Event) {
 <template>
   <div class="flex items-center justify-center">
     <div class="inline-flex flex-wrap items-center gap-2 p-2">
-      <label>
+      <label for="grid-rows">
         {{ $t('label.row') }}
       </label>
       <input
-        id="username"
+        id="grid-rows"
         :value="rows"
         type="number"
         class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"
@@ -39,11 +39,11 @@ function updateCols(e: Event) {
     </div>
 
     <div class="inline-flex flex-wrap items-center gap-2 p-2">
-      <label>
+      <label for="grid-cols">
         {{ $t('label.col') }}
       </label>
       <input
-        id="username"
+        id="grid-cols"
         :value="cols"
         type="number"
         class="text-grass11 h-[35px] w-20 shrink-0 grow rounded p-2 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-blue8"

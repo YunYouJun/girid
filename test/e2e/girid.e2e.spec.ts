@@ -2,11 +2,11 @@ import { fileURLToPath } from 'node:url'
 import { getBrowser, setup, url } from '@nuxt/test-utils/e2e'
 import { isWindows } from 'std-env'
 import { describe, expect, it, vi } from 'vitest'
-import { suggestedTableFilename } from '../../packages/site/config'
+import { suggestedTableFilename } from '../../apps/web/app/config'
 
 await setup({
   // test context options
-  rootDir: fileURLToPath(new URL('../../packages/site', import.meta.url)),
+  rootDir: fileURLToPath(new URL('../../apps/web', import.meta.url)),
   browser: true,
   setupTimeout: (isWindows ? 360 : 120) * 1000,
 })
