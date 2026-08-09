@@ -2,9 +2,10 @@ import type { GridItem } from '../../utils'
 import { useStorage } from '@vueuse/core'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { defaultGridItems } from '../../utils'
+import { useIndexedDbStorage } from '../useIndexedDbStorage'
 
 export const useGiridStore = defineStore('girid', () => {
-  const userGridItems = useStorage('girid-user-items', defaultGridItems)
+  const { state: userGridItems } = useIndexedDbStorage<GridItem[]>('girid-user-items', defaultGridItems)
   const curGridItem = ref<GridItem>()
 
   const rows = useStorage('girid:rows', 3)
@@ -32,7 +33,7 @@ export const useGiridStore = defineStore('girid', () => {
     curGridItem,
 
     reset() {
-      userGridItems.value = defaultGridItems
+      userGridItems.value = structuredClone(defaultGridItems)
     },
   }
 })

@@ -27,7 +27,7 @@
     "node": "^22.19.0 || ^24.5.0 || >=26.0.0"
   },
   "scripts": {
-    "build": "pnpm run generate",
+    "build": "pnpm run build:web",
     "build:web": "pnpm -C apps/web build",
     "build:bangumi": "pnpm -C packages/bangumi-api build",
     "dev": "pnpm -C apps/web dev",

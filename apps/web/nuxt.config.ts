@@ -51,15 +51,6 @@ export default defineNuxtConfig({
   ],
 
   vite: {
-    server: {
-      proxy: {
-        '/api/bgm': {
-          target: 'https://girid.yunyoujun.cn',
-          changeOrigin: true,
-        },
-      },
-    },
-
     vue: {
       template: {
         compilerOptions: {
@@ -89,8 +80,6 @@ export default defineNuxtConfig({
     '~/styles/main.css',
     '~/styles/css-vars.scss',
     '~/styles/index.scss',
-
-    'vue-final-modal/style.css',
   ],
 
   colorMode: {

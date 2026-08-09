@@ -1,6 +1,8 @@
 button:
   about: About
   back: Back
+  clear: Clear
+  close: Close
   go: GO
   home: Home
   toggle_dark: Toggle dark mode

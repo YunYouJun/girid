@@ -16,9 +16,15 @@
 ## Dev
 
 ```bash
-pnpm generate
-# static content in ./apps/web/.output/public
+pnpm dev
+pnpm build
+pnpm -C apps/web start
 ```
+
+The Nuxt application and its `/api/bgm/cors` server route are deployed together
+on EdgeOne Makers. The connected project uses `apps/web` as its root directory
+and reads deployment settings from `apps/web/edgeone.json`. Use `pnpm generate`
+only when a static-only build is needed.
 
 ## Thanks
 

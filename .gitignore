@@ -1,6 +1,7 @@
 .DS_Store
 *.local
 .vercel
+.edgeone
 
 node_modules
 *.log
@@ -9,5 +10,3 @@ dist
 .nuxt
 .env
 .idea/
-
-.vercel

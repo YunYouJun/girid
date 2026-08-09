@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ModalsContainer } from 'vue-final-modal'
 import pkg from '../../../package.json'
 
 import config from './config'
@@ -38,7 +37,6 @@ const url = pkg.repository.url
   <VitePwaManifest />
   <NuxtLayout>
     <NuxtPage />
-    <ModalsContainer />
   </NuxtLayout>
 
   <github-corners

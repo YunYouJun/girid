@@ -1,14 +1,8 @@
 {
-  "buildCommand": "pnpm generate",
+  "buildCommand": "pnpm build",
   "installCommand": "corepack pnpm install --frozen-lockfile",
-  "outputDirectory": "apps/web/.output/public",
+  "outputDirectory": ".edgeone",
   "nodeVersion": "24.5.0",
-  "rewrites": [
-    {
-      "source": "/*",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/_nuxt/*",

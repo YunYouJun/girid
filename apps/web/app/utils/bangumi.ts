@@ -6,11 +6,12 @@ export const bangumiApi = createBangumiApi({
 })
 
 /**
- * use vercel cors proxy
+ * Route Bangumi CDN images through the colocated Nuxt API so canvas export
+ * remains same-origin in development and production.
  */
 export function getImageWithoutCors(imageUrl: string) {
   if (imageUrl.startsWith('https://lain.bgm.tv'))
-    return `${import.meta.env.DEV ? '' : ''}/api/bgm/cors?url=${imageUrl}`
+    return `/api/bgm/cors?url=${encodeURIComponent(imageUrl)}`
   else
     return imageUrl
 }

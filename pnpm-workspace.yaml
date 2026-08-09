@@ -20,7 +20,7 @@ catalog:
   '@vue/test-utils': ^2.4.11
   '@vueuse/nuxt': ^14.4.0
   '@yunlefun/utils': ^0.1.2
-  '@yunlefun/vue': 0.0.8
+  '@yunlefun/vue': 0.1.1
   '@yunlefun/vueuse': ^0.1.2
   axios: ^1.19.0
   bumpp: ^12.2.0
@@ -35,7 +35,7 @@ catalog:
   oxc-parser: ^0.143.0
   pinia: ^4.0.2
   playwright-core: ^1.62.1
-  radix-vue: ^1.9.17
+  reka-ui: ^2.10.1
   rimraf: ^6.1.3
   sass: ^1.102.0
   tsx: ^4.23.11
@@ -43,7 +43,6 @@ catalog:
   unbuild: ^3.6.1
   vite: ^8.2.1
   vitest: ^4.1.10
-  vue-final-modal: ^4.5.5
   vue-gtag-next: ^1.14.0
   vue-i18n: ^11.4.8
   vue-tsc: ^3.3.9
