@@ -1,9 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "axios": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:"
-  }
-}
