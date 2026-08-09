@@ -7,7 +7,8 @@
 
 ## 地址
 
-- [girid.yunyoujun.cn](https://girid.yunyoujun.cn)
+- 主站（EdgeOne Pages）：[girid.yunyoujun.cn](https://girid.yunyoujun.cn)
+- 备用站（Vercel）：[girid.yyj.moe](https://girid.yyj.moe)
 
 ## Todo
 
@@ -23,8 +24,9 @@ pnpm -C apps/web start
 
 The Nuxt application and its `/api/bgm/cors` server route are deployed together
 on EdgeOne Makers. The connected project uses `apps/web` as its root directory
-and reads deployment settings from `apps/web/edgeone.json`. Use `pnpm generate`
-only when a static-only build is needed.
+and reads deployment settings from `apps/web/edgeone.json`. Vercel provides the
+fallback deployment at `girid.yyj.moe`. Use `pnpm generate` only when a
+static-only build is needed.
 
 ## Thanks
 
